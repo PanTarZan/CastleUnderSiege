@@ -1,0 +1,23 @@
+<Entries>
+  <Entry>
+    <Name>Zlodupiec</Name>
+    <Text>Ty Psi ogonie!</Text>
+    <GraphicName>Tex_lich</GraphicName>
+    <BorderColor>FF00D7</BorderColor>
+    <ScreenPosition>Left</ScreenPosition>
+  </Entry>
+  <Entry>
+    <Name>Dobrodupiec</Name>
+    <Text>A wlasnie ze ty!</Text>
+    <GraphicName>Tex_elf_sentinel_male</GraphicName>
+    <BorderColor>000000</BorderColor>
+    <ScreenPosition>Right</ScreenPosition>
+  </Entry>
+  <Entry>
+    <Name>Zlodupiec</Name>
+    <Text>No U!</Text>
+    <GraphicName>Tex_lich</GraphicName>
+    <BorderColor>FF00D7</BorderColor>
+    <ScreenPosition>Left</ScreenPosition>
+  </Entry>
+</Entries>

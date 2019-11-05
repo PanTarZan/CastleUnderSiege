@@ -1,0 +1,6 @@
+Temp/
+Library/metadata
+Library/*Cache
+Logs/
+*.meta.
+*.meta
