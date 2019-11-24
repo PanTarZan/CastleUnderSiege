@@ -50,6 +50,10 @@ public class LevelManagement : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Escape))
         {
             isGamePaused = !isGamePaused;
+            if (isIntroFinished)
+            {
+                ShowPausedScreen();
+            }
         }
 
         CheckGameState();
@@ -143,11 +147,7 @@ public class LevelManagement : MonoBehaviour
         if (isGamePaused)
         {
             Time.timeScale = 0;
-            if (isIntroFinished)
-            {
-            ShowPausedScreen();
-
-            }
+            
 
         }
         else

@@ -101,7 +101,7 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2604517953406711293}
   serializedVersion: 2
-  m_Mass: 2
+  m_Mass: 1
   m_Drag: 0
   m_AngularDrag: 0.05
   m_UseGravity: 1
@@ -125,5 +125,5 @@ MonoBehaviour:
   rb: {fileID: 0}
   damage: 20
   explosionRadius: 2
-  explosionEffect: {fileID: 8860260742989370443, guid: f0a6addab837fce478312f73f5d601b7,
+  explosionEffect: {fileID: 1823608775185331993, guid: f0a6addab837fce478312f73f5d601b7,
     type: 3}

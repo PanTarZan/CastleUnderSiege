@@ -675,6 +675,7 @@ GameObject:
   - component: {fileID: 4122027881434609928}
   - component: {fileID: 4122027881434609929}
   - component: {fileID: 4122027881434609932}
+  - component: {fileID: 3392426853434101784}
   m_Layer: 0
   m_Name: SKELETON_KNIGHT_LEGACY (1)
   m_TagString: Untagged
@@ -804,7 +805,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4122027881861776249}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: bb65c70af91be4d48a62464b45438403, type: 3}
   m_Name: 
@@ -817,6 +818,18 @@ MonoBehaviour:
   WaypointIndex: 0
   Distance: 4.497921
   i: 65
+--- !u!114 &3392426853434101784
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4122027881861776249}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ede719e9f45dab147ba1931146632b95, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &4122027881861776681
 GameObject:
   m_ObjectHideFlags: 0

@@ -10,17 +10,17 @@ public class Shooting : MonoBehaviour
     public GameObject cannonStartPoint;
     public float shootCooldown;
     private float nextFire = 0.1f;
+    public GameObject partToRotate;
 
     // Start is called before the first frame update
     void Start()
     {
-        
-    }
+}
 
     // Update is called once per frame
     void Update()
     {
-
+        LookAtPointer();
         if (Input.GetKey(KeyCode.Mouse0) && Time.time > nextFire)
         {
             Shoot();
@@ -28,9 +28,15 @@ public class Shooting : MonoBehaviour
         }
     }
 
+    private void LookAtPointer()
+    {
+        GameObject pointer = FindObjectOfType<Pointer>().gameObject;
+        partToRotate.transform.LookAt(pointer.transform);
+        Debug.DrawLine(transform.position, pointer.transform.position);
+    }
+
     private void Shoot()
     {
-        
         Instantiate(projectilePrefab, cannonStartPoint.transform.position, cannonStartPoint.transform.rotation);
     }
 }

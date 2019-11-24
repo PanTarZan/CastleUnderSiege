@@ -6,35 +6,34 @@ using UnityStandardAssets.Characters.FirstPerson;
 public class CameraRaycaster : MonoBehaviour
 {
 
+    [SerializeField] GameObject PointerPrefab;
+    GameObject Pointer = null;
     Camera cam;
-    //[SerializeField] GameObject miniSphere = null;
+    public Vector3 pointerLocation;
 
     private GameObject[] cannons = null;
     public MouseLook mouseLook = new MouseLook();
-    //public GameObject characterObject;
 
     void Start()
     {
         cam = GetComponentInChildren<Camera>();
         cannons = GameObject.FindGameObjectsWithTag("Turret");
         mouseLook.Init(transform, cam.transform);
+        Pointer = Instantiate(PointerPrefab);
     }
 
     void Update()
     {
+        
         RotateView();
-        //RaycastHit hit;
-        // Ray ray = cam.ScreenPointToRay(Input.mousePosition);
-        // if (Physics.Raycast(ray, out hit))
-        // {
-        //miniSphere.transform.position = hit.point;
-
-        //  foreach (var cannon in cannons)
-        //   {
-        //      cannon.transform.LookAt(hit.point, Vector3.up);
-        // }
-
-        /// }
+        RaycastHit hit;
+        if (Physics.Raycast(transform.position, cam.transform.forward, out hit, Mathf.Infinity))
+        {
+            Pointer.transform.position = hit.point;
+        }
+        else
+        {
+        }
     }
 
     private void RotateView()
