@@ -676,6 +676,7 @@ GameObject:
   - component: {fileID: 4122027881434609929}
   - component: {fileID: 4122027881434609932}
   - component: {fileID: 3392426853434101784}
+  - component: {fileID: 6537869293730705524}
   m_Layer: 0
   m_Name: SKELETON_KNIGHT_LEGACY (1)
   m_TagString: Untagged
@@ -830,6 +831,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ede719e9f45dab147ba1931146632b95, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &6537869293730705524
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4122027881861776249}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 97c5f5401b9750543b54d4c807c4e076, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damagePopupPrefab: {fileID: 5796569754855487803, guid: 03e37da402f8c7f4aa6d429f7032ba33,
+    type: 3}
+  health: 100
+  current_health: 0
 --- !u!1 &4122027881861776681
 GameObject:
   m_ObjectHideFlags: 0

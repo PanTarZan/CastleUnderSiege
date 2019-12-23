@@ -3105,7 +3105,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 789170453}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -63.04, y: 12.56, z: 41.05}
+  m_LocalPosition: {x: -9.17, y: 1.3, z: 31.55}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 974439773}
@@ -9827,7 +9827,7 @@ PrefabInstance:
     - target: {fileID: 6893404898765303847, guid: 781e326602822614e887af2b047fe5d8,
         type: 3}
       propertyPath: shootCooldown
-      value: 0.1
+      value: 0.3
       objectReference: {fileID: 0}
     - target: {fileID: 6893404898765303847, guid: 781e326602822614e887af2b047fe5d8,
         type: 3}
