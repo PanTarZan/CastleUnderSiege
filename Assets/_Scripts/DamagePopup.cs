@@ -12,6 +12,7 @@ public class DamagePopup : MonoBehaviour
     public  DamagePopup Create(Vector3 poisiton, float damageAmount, GameObject dp_prefab)
     {
         var dp_trans = Instantiate(dp_prefab, poisiton, Quaternion.identity);
+        dp_trans.transform.rotation = Quaternion.LookRotation(transform.position - Camera.main.transform.position);
         DamagePopup dp = dp_trans.GetComponent<DamagePopup>();
         dp.Setup(damageAmount);
 
@@ -31,7 +32,6 @@ public class DamagePopup : MonoBehaviour
 
     private void Update()
     {
-        transform.LookAt(Camera.main.transform);
         float moveYSpeed= 10f;
         transform.position += new Vector3(0, moveYSpeed) * Time.deltaTime;
         dissappearTimer -= Time.deltaTime;

@@ -67,6 +67,7 @@
      <Compile Include="Assets\_Scripts\Pointer.cs" />
      <Compile Include="Assets\_Scripts\Projectile.cs" />
      <Compile Include="Assets\_Scripts\Shooting.cs" />
+     <Compile Include="Assets\_Scripts\WaveData.cs" />
      <Compile Include="Assets\FarlandSkies\Demo\Scripts\Player\FPSWalkerEnhanced.cs" />
      <Compile Include="Assets\FarlandSkies\Demo\Scripts\Player\SmoothMouseLook.cs" />
      <Compile Include="Assets\FarlandSkies\Demo\Scripts\Skybox\SkyboxChanger.cs" />

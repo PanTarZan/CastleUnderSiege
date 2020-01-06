@@ -1,35 +1,36 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityStandardAssets.Characters.ThirdPerson;
 
 public class EnemySpawner : MonoBehaviour
 {
-    public List<GameObject> Routes = null;
-    public GameObject EnemyPrefab = null;
-    public List<Transform> Waypoints;
-    public HeadQuaters HQ;
-    public Transform enemyTarget;
+    public List<GameObject> locations = new List<GameObject>();
+    public List<WaveData> waves = new List<WaveData>();
+    public Transform baseToAttackObject;
 
     // Start is called before the first frame update
     void Start()
     {
-        HQ = GetComponent<HeadQuaters>();
-        foreach (Transform w in Routes[0].transform.GetComponentInChildren<Transform>())
-        {
-            Waypoints.Add(w);
-        }
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.P))
-        {
-            var enemy = Instantiate(EnemyPrefab, Waypoints[0].position, Waypoints[0].rotation);
-            var enemyAI = enemy.GetComponent<AICharacterControl>();
-            enemyAI.SetTarget(enemyTarget);
 
+    }
+
+    public void SpawnWave(int waveNumber)
+    {
+        foreach (var loc in locations)
+        {
+            for (int i=0; i<= waves[waveNumber].enemyAmount; i++)
+            {
+                var enemy = Instantiate(waves[waveNumber].enemyPrefab, loc.transform.position, Quaternion.identity);
+                var enemyAI = enemy.GetComponent<AICharacterControl>();
+                enemyAI.SetTarget(baseToAttackObject);
+            }
         }
     }
 }
