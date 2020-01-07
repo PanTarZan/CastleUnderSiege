@@ -33,7 +33,6 @@ public class Shooting : MonoBehaviour
         GameObject pointer = FindObjectOfType<Pointer>().gameObject;
         partToRotate.transform.LookAt(pointer.transform);
         cannonStartPoint.transform.LookAt(pointer.transform);
-        Debug.DrawLine(transform.position, pointer.transform.position);
     }
 
     private void Shoot()

@@ -11,7 +11,6 @@ public class HeadQuaters : MonoBehaviour
     [SerializeField] GameObject enemy_display;
     [SerializeField] GameObject wave_display;
     [SerializeField] float health =100;
-    [SerializeField] float money = 0;
     [SerializeField] public GameObject centerOfBase = null;
     [SerializeField] float checkIfEnemyRadius=1;
     public EnemySpawner spawner;

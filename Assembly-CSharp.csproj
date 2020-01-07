@@ -57,6 +57,7 @@
      <Compile Include="Assets\_Scripts\DamagePopup.cs" />
      <Compile Include="Assets\_Scripts\DialogManager.cs" />
      <Compile Include="Assets\_Scripts\DialogObject.cs" />
+     <Compile Include="Assets\_Scripts\DialogSpeaker.cs" />
      <Compile Include="Assets\_Scripts\EnemyAI.cs" />
      <Compile Include="Assets\_Scripts\EnemySpawner.cs" />
      <Compile Include="Assets\_Scripts\ExplosionHandler.cs" />

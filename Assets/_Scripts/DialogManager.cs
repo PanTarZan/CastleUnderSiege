@@ -1,67 +1,106 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Xml;
+using UnityEngine;
+using UnityEngine.UI;
 
-public class DialogManager
+public class DialogManager : MonoBehaviour
 {
-    public void CreateXmlTemplate()
+    
+    [SerializeField] public Camera dialogCamera;
+    [SerializeField] public GameObject mainCamera;
+
+    [SerializeField] public Canvas dialogCanvas;
+    [SerializeField] public Canvas gameUI;
+
+    [SerializeField] public GameObject namePanel;
+    [SerializeField] public GameObject textPanel;
+    [SerializeField] public GameObject characterGraphic;
+    
+
+    public DialogObject[] listOfLines;
+
+    private Queue<string> sentences;
+    private Queue<DialogObject> dialogs;
+    
+    public void Start()
     {
-        //do stworzenia pierwszej xmlki tylko
-
-        var Template = new XmlDocument();
-        XmlNode rootNode = Template.CreateElement("Entries");
-        Template.AppendChild(rootNode);
-
-        XmlNode entryNode = Template.CreateElement("Entry");
-        rootNode.AppendChild(entryNode);
-
-        XmlNode characterName = Template.CreateElement("Name");
-        characterName.InnerText = "Zlodupiec";
-
-        XmlNode characterSpeech = Template.CreateElement("Text");
-        characterSpeech.InnerText = "Ty Psi ogonie!";
-
-        XmlNode characterGraphic = Template.CreateElement("GraphicName");
-        characterGraphic.InnerText = "Tex_lich";
-
-        XmlNode characterBorderColor = Template.CreateElement("BorderColor");
-        characterBorderColor.InnerText = "FF00D7";
-
-        XmlNode characterScreenPosition = Template.CreateElement("ScreenPosition");
-        characterScreenPosition.InnerText = "Left";
-
-        entryNode.AppendChild(characterName);
-        entryNode.AppendChild(characterSpeech);
-        entryNode.AppendChild(characterGraphic);
-        entryNode.AppendChild(characterBorderColor);
-        entryNode.AppendChild(characterScreenPosition);
-
-
-        Template.Save("test-doc.xml");
+        sentences = new Queue<string>();
+        dialogs = new Queue<DialogObject>();
+        BeginDialog();
     }
 
-    public List<DialogObject> LoadDialogXML(string dialogName)
+    private void BeginDialog()
     {
-        List<DialogObject> listOfEntries = new List<DialogObject>();
-        XmlDocument xmlDoc = new XmlDocument();
-        xmlDoc.Load("test-doc.xml");
-        XmlNodeList entryNodes = xmlDoc.SelectNodes("//Entries/Entry");
-        
+        dialogCanvas.gameObject.SetActive(true);
 
-        foreach (XmlNode node in entryNodes)
+        dialogs.Clear();
+        foreach (var actor in listOfLines)
         {
-            DialogObject DObject = new DialogObject();
-            
-                DObject.Name = node.SelectSingleNode("Name").InnerText;
-                DObject.Text = node.SelectSingleNode("Text").InnerText;
-                DObject.Graphic = node.SelectSingleNode("GraphicName").InnerText;
-                DObject.BorderColor = node.SelectSingleNode("BorderColor").InnerText;
-                DObject.ScreenPosition = node.SelectSingleNode("ScreenPosition").InnerText;
-            
-            listOfEntries.Add(DObject);
+            dialogs.Enqueue(actor);
         }
 
-        return listOfEntries;
+        StartNextActor();
+    }
+
+    public void StartNextActor()
+    {
+        if (dialogs.Count == 0)
+        {
+            EndDialog();
+            return;
+        }
+
+        var dialogEntry = dialogs.Dequeue();
+        string actorName = dialogEntry.Character.name;
+
+        Debug.Log("Starting talking with: " + actorName);
+        SetActorUIProperties(dialogEntry);
+
+        sentences.Clear();
+        foreach (var sentence in dialogEntry.text)
+        {
+            sentences.Enqueue(sentence);
+        }
+        DisplayNextSentence();
+    }
+
+    private void SetActorUIProperties(DialogObject dialogEntry)
+    {
+        characterGraphic.GetComponent<Image>().sprite = dialogEntry.Character.graphic;
+        namePanel.GetComponentInChildren<Text>().text = dialogEntry.Character.name;
+        namePanel.GetComponent<Image>().color = dialogEntry.Character.borderColor;
+        textPanel.GetComponent<Image>().color = dialogEntry.Character.borderColor;
+    }
+
+    public void DisplayNextSentence()
+    {
+        if (sentences.Count == 0)
+        {
+            StartNextActor();
+            return;
+        }
+        string sentence = sentences.Dequeue();
+        StartCoroutine(UpdateTextPanel(sentence));
+        Debug.Log(sentence);
+    }
+
+    private IEnumerator UpdateTextPanel(string sentence)
+    {
+        string text_to_display = "";
+        foreach (var letter in sentence)
+        {
+            text_to_display += letter;
+            textPanel.GetComponentInChildren<Text>().text = text_to_display;
+            yield return null;
+        }
+
+    }
+
+    public void EndDialog()
+    {
+        Debug.Log("EndDialog");
     }
 }
 
