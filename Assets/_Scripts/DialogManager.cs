@@ -26,13 +26,13 @@ public class DialogManager : MonoBehaviour
     
     public void Start()
     {
-        sentences = new Queue<string>();
-        dialogs = new Queue<DialogObject>();
         BeginDialog();
     }
 
     private void BeginDialog()
     {
+        sentences = new Queue<string>();
+        dialogs = new Queue<DialogObject>();
         dialogCanvas.gameObject.SetActive(true);
 
         dialogs.Clear();
@@ -54,8 +54,7 @@ public class DialogManager : MonoBehaviour
 
         var dialogEntry = dialogs.Dequeue();
         string actorName = dialogEntry.Character.name;
-
-        Debug.Log("Starting talking with: " + actorName);
+        
         SetActorUIProperties(dialogEntry);
 
         sentences.Clear();
@@ -83,7 +82,6 @@ public class DialogManager : MonoBehaviour
         }
         string sentence = sentences.Dequeue();
         StartCoroutine(UpdateTextPanel(sentence));
-        Debug.Log(sentence);
     }
 
     private IEnumerator UpdateTextPanel(string sentence)
@@ -101,6 +99,16 @@ public class DialogManager : MonoBehaviour
     public void EndDialog()
     {
         Debug.Log("EndDialog");
+        gameObject.GetComponent<LevelManagement>().enabled = true;
+        gameObject.GetComponent<HeadQuaters>().enabled = true;
+        dialogCanvas.gameObject.SetActive(false);
+        mainCamera.SetActive(true);
+        dialogCamera.gameObject.SetActive(false);
+        gameUI.gameObject.SetActive(true);
+        foreach(var turret in FindObjectsOfType<Shooting>())
+        {
+            turret.enabled = true;
+        }
     }
 }
 

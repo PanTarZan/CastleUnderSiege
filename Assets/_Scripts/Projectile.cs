@@ -6,7 +6,8 @@ public class Projectile : MonoBehaviour
 {
     public float thrust;
     public Rigidbody rb;
-    public float damage;
+    public float damageMIN;
+    public float damageMAX;
     public float explosionRadius;
     public GameObject explosionEffect;
 
@@ -35,6 +36,7 @@ public class Projectile : MonoBehaviour
             if (h.transform.GetComponent<Health>())
             {
                 Debug.Log(h.transform.gameObject.name);
+                float damage = Random.Range(damageMIN, damageMAX);
                 h.transform.GetComponent<Health>().TakeDamage(damage);
             }
         }

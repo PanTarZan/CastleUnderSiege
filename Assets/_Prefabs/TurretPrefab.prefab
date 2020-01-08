@@ -44,9 +44,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8ad1dc235f882b4fb29889f9075eb3b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  projectilePrefab: {fileID: 0}
-  cannonStartPoint: {fileID: 0}
-  shootCooldown: 0
+  projectilePrefab: {fileID: 2604517953406711293, guid: 5648e17af8cf5b7468db15bef0269056,
+    type: 3}
+  cannonStartPoint: {fileID: 8794303372610463566}
+  shootCooldown: 0.2
+  partToRotate: {fileID: 9132122568378331663}
 --- !u!1 &8382097776026116304
 GameObject:
   m_ObjectHideFlags: 0

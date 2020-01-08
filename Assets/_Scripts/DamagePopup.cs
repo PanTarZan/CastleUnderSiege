@@ -12,7 +12,7 @@ public class DamagePopup : MonoBehaviour
     public  DamagePopup Create(Vector3 poisiton, float damageAmount, GameObject dp_prefab)
     {
         var dp_trans = Instantiate(dp_prefab, poisiton, Quaternion.identity);
-        dp_trans.transform.rotation = Quaternion.LookRotation(transform.position - Camera.main.transform.position);
+        dp_trans.transform.rotation = Quaternion.LookRotation(Camera.main.transform.forward);
         DamagePopup dp = dp_trans.GetComponent<DamagePopup>();
         dp.Setup(damageAmount);
 
@@ -27,7 +27,7 @@ public class DamagePopup : MonoBehaviour
 
     public void Setup(float damageAmount)
     {
-        textMesh.SetText(damageAmount.ToString());
+        textMesh.SetText(((int)damageAmount).ToString());
     }
 
     private void Update()

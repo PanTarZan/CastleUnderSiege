@@ -123,7 +123,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   thrust: 2000
   rb: {fileID: 0}
-  damage: 20
+  damageMIN: 19
+  damageMAX: 23
   explosionRadius: 2
   explosionEffect: {fileID: 1823608775185331993, guid: f0a6addab837fce478312f73f5d601b7,
     type: 3}
