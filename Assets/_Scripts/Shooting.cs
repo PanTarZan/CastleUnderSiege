@@ -38,5 +38,6 @@ public class Shooting : MonoBehaviour
     private void Shoot()
     {
         Instantiate(projectilePrefab, cannonStartPoint.transform.position, cannonStartPoint.transform.rotation);
+        GetComponent<AudioSource>().Play();
     }
 }

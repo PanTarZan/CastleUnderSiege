@@ -23,5 +23,6 @@ public class ExplosionHandler : MonoBehaviour
     public void Create(Vector3 poisiton, GameObject explosion_prefab)
     {
         Instantiate(explosion_prefab, poisiton, Quaternion.identity);
+        GetComponent<AudioSource>().Play();
     }
 }

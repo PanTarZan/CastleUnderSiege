@@ -13,6 +13,7 @@ public class HeadQuaters : MonoBehaviour
     [SerializeField] float health =100;
     [SerializeField] public GameObject centerOfBase = null;
     [SerializeField] float checkIfEnemyRadius=1;
+    [SerializeField] public AudioClip StageMusic;
     public EnemySpawner spawner;
 
     private int waveNumber = 0;

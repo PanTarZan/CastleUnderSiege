@@ -17,7 +17,10 @@ public class DialogManager : MonoBehaviour
     [SerializeField] public GameObject namePanel;
     [SerializeField] public GameObject textPanel;
     [SerializeField] public GameObject characterGraphic;
-    
+
+    [SerializeField] public AudioClip DialogMusic;
+
+
 
     public DialogObject[] listOfLines;
 
@@ -31,6 +34,10 @@ public class DialogManager : MonoBehaviour
 
     private void BeginDialog()
     {
+        var ac = GetComponent<AudioSource>();
+        ac.clip = DialogMusic;
+        ac.Play();
+
         sentences = new Queue<string>();
         dialogs = new Queue<DialogObject>();
         dialogCanvas.gameObject.SetActive(true);
@@ -101,11 +108,18 @@ public class DialogManager : MonoBehaviour
         Debug.Log("EndDialog");
         gameObject.GetComponent<LevelManagement>().enabled = true;
         gameObject.GetComponent<HeadQuaters>().enabled = true;
+
+        var ac = GetComponent<AudioSource>();
+        ac.Stop();
+        ac.clip = gameObject.GetComponent<HeadQuaters>().StageMusic;
+        ac.Play();
+        
         dialogCanvas.gameObject.SetActive(false);
         mainCamera.SetActive(true);
         dialogCamera.gameObject.SetActive(false);
         gameUI.gameObject.SetActive(true);
-        foreach(var turret in FindObjectsOfType<Shooting>())
+        
+        foreach (var turret in FindObjectsOfType<Shooting>())
         {
             turret.enabled = true;
         }
