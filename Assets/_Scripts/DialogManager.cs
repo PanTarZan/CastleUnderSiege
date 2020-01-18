@@ -94,6 +94,7 @@ public class DialogManager : MonoBehaviour
     private IEnumerator UpdateTextPanel(string sentence)
     {
         string text_to_display = "";
+
         foreach (var letter in sentence)
         {
             text_to_display += letter;

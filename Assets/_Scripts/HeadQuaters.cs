@@ -71,9 +71,13 @@ public class HeadQuaters : MonoBehaviour
 
         if (Physics.SphereCast(target, checkRadius, centerOfBase.transform.forward, out hit, raycastRadius))
         {
+            if (hit.collider.gameObject.tag == "Enemy")
+            {
             Destroy(hit.collider.gameObject);
             currentHealth -= 10;
             //money -= 10;
+
+            }
         }
     }
 
