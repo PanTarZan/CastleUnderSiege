@@ -23,21 +23,24 @@ public class DamagePopup : MonoBehaviour
     public void Awake()
     {
         textMesh = gameObject.GetComponent<TextMeshPro>();
+        textColor = textMesh.color;
     }
 
     public void Setup(float damageAmount)
     {
         textMesh.SetText(((int)damageAmount).ToString());
+        
     }
 
     private void Update()
     {
         float moveYSpeed= 10f;
         transform.position += new Vector3(0, moveYSpeed) * Time.deltaTime;
+        
         dissappearTimer -= Time.deltaTime;
-        if (dissappearTimer <= 0)
+        if (dissappearTimer < 0)
         {
-            float dissappearSpeed = 3;
+            float dissappearSpeed = 3f;
             textColor.a -= dissappearSpeed * Time.deltaTime;
             textMesh.color = textColor;
             if (textColor.a <= 0)

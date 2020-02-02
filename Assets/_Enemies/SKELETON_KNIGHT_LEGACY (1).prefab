@@ -845,7 +845,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damagePopupPrefab: {fileID: 5796569754855487803, guid: 03e37da402f8c7f4aa6d429f7032ba33,
     type: 3}
-  health: 100
+  health: 60
   current_health: 0
 --- !u!1 &4122027881861776681
 GameObject:

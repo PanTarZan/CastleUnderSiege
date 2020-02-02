@@ -76,8 +76,8 @@ public class DialogManager : MonoBehaviour
     {
         characterGraphic.GetComponent<Image>().sprite = dialogEntry.Character.graphic;
         namePanel.GetComponentInChildren<Text>().text = dialogEntry.Character.name;
-        namePanel.GetComponent<Image>().color = dialogEntry.Character.borderColor;
-        textPanel.GetComponent<Image>().color = dialogEntry.Character.borderColor;
+        //namePanel.GetComponent<Image>().color = dialogEntry.Character.borderColor;
+        //textPanel.GetComponent<Image>().color = dialogEntry.Character.borderColor;
     }
 
     public void DisplayNextSentence()
