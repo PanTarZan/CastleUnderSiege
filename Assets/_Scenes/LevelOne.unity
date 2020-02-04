@@ -4964,6 +4964,87 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cee3e2fd2a6f1614c9e86ca24459a9e7, type: 3}
+--- !u!1001 &595372108
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 2897686026986884062, guid: 123200e2b75785a44a216520295bd93a,
+        type: 3}
+      propertyPath: m_Name
+      value: MenuManager
+      objectReference: {fileID: 0}
+    - target: {fileID: 2897686026986884060, guid: 123200e2b75785a44a216520295bd93a,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 623
+      objectReference: {fileID: 0}
+    - target: {fileID: 2897686026986884060, guid: 123200e2b75785a44a216520295bd93a,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 318.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2897686026986884060, guid: 123200e2b75785a44a216520295bd93a,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2897686026986884060, guid: 123200e2b75785a44a216520295bd93a,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2897686026986884060, guid: 123200e2b75785a44a216520295bd93a,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2897686026986884060, guid: 123200e2b75785a44a216520295bd93a,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2897686026986884060, guid: 123200e2b75785a44a216520295bd93a,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2897686026986884060, guid: 123200e2b75785a44a216520295bd93a,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 2897686026986884060, guid: 123200e2b75785a44a216520295bd93a,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2897686026986884060, guid: 123200e2b75785a44a216520295bd93a,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2897686026986884060, guid: 123200e2b75785a44a216520295bd93a,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 123200e2b75785a44a216520295bd93a, type: 3}
+--- !u!114 &595372109 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2897686026986884061, guid: 123200e2b75785a44a216520295bd93a,
+    type: 3}
+  m_PrefabInstance: {fileID: 595372108}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c0fedb5c158c88c4d9c2212f1f0ae93c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &605674820 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 458024, guid: d2522dcf0fb8d6b4aa4ddd10c405746a,
@@ -8293,7 +8374,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 985218805}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 595372109}
+        m_MethodName: QuitGame
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &985218805
@@ -14256,7 +14348,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1696875801}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 595372109}
+        m_MethodName: LoadLevel
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &1696875801
@@ -15360,7 +15463,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1884329967}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 595372109}
+        m_MethodName: LoadLevel
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 1
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &1884329967
@@ -17492,6 +17606,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: CannonLvl1
       objectReference: {fileID: 0}
+    - target: {fileID: 142884319057316879, guid: d3ef549050e9b0542b4f3c3dd47a1085,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 142884319057479597, guid: d3ef549050e9b0542b4f3c3dd47a1085,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -17545,6 +17664,11 @@ PrefabInstance:
     - target: {fileID: 142884319057479597, guid: d3ef549050e9b0542b4f3c3dd47a1085,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8195004354313180532, guid: d3ef549050e9b0542b4f3c3dd47a1085,
+        type: 3}
+      propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 142884319057316873, guid: d3ef549050e9b0542b4f3c3dd47a1085,
