@@ -25,6 +25,11 @@ public class EnemySpawner : MonoBehaviour
     {
         foreach (var loc in locations)
         {
+            if (loc == null)
+            {
+                return;
+            }
+
             for (int i=0; i<= waves[waveNumber].enemyAmount; i++)
             {
                 var enemy = Instantiate(waves[waveNumber].enemyPrefab, loc.transform.position, Quaternion.identity);

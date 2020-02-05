@@ -12,7 +12,6 @@ public class DialogManager : MonoBehaviour
     [SerializeField] public GameObject mainCamera;
 
     [SerializeField] public Canvas dialogCanvas;
-    [SerializeField] public Canvas gameUI;
 
     [SerializeField] public GameObject namePanel;
     [SerializeField] public GameObject textPanel;
@@ -21,7 +20,7 @@ public class DialogManager : MonoBehaviour
     [SerializeField] public AudioClip DialogMusic;
 
 
-
+    private LevelManagement lm;
     public DialogObject[] listOfLines;
 
     private Queue<string> sentences;
@@ -29,6 +28,7 @@ public class DialogManager : MonoBehaviour
     
     public void Start()
     {
+        lm = gameObject.GetComponent<LevelManagement>();
         BeginDialog();
     }
 
@@ -118,12 +118,7 @@ public class DialogManager : MonoBehaviour
         dialogCanvas.gameObject.SetActive(false);
         mainCamera.SetActive(true);
         dialogCamera.gameObject.SetActive(false);
-        gameUI.gameObject.SetActive(true);
-        
-        foreach (var turret in FindObjectsOfType<Shooting>())
-        {
-            turret.enabled = true;
-        }
+        lm.gameUI.SetActive(true);
     }
 }
 

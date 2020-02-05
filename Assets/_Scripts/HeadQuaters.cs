@@ -14,6 +14,7 @@ public class HeadQuaters : MonoBehaviour
     [SerializeField] public GameObject centerOfBase = null;
     [SerializeField] float checkIfEnemyRadius=1;
     [SerializeField] public AudioClip StageMusic;
+    [SerializeField] LevelManagement lm;
     public EnemySpawner spawner;
 
     private int waveNumber = 0;
@@ -25,6 +26,7 @@ public class HeadQuaters : MonoBehaviour
     void Start()
     {
         spawner = gameObject.GetComponent<EnemySpawner>();
+        lm = gameObject.GetComponent<LevelManagement>();
         currentHealth = health;
         target = centerOfBase.transform.position;
     }
@@ -32,34 +34,42 @@ public class HeadQuaters : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+
 
         checkIfEnemiesAreInBase(checkIfEnemyRadius);
-        health_display.GetComponent<Text>().text = currentHealth.ToString();
-        money_display.GetComponent<Text>().text = currentMoney.ToString();
-
-        int enemyCount = GameObject.FindGameObjectsWithTag("Enemy").Length;
-        
-        if (enemyCount == 0)
-        {
-            if (waveNumber >= spawner.waves.Capacity)
-            {
-                ShowVictoryScreen();
-                return;
-            }
-            spawner.SpawnWave(waveNumber);
-            waveNumber +=1;
-        }
-
-        enemy_display.GetComponent<Text>().text = enemyCount.ToString();
-        wave_display.GetComponent<Text>().text = waveNumber.ToString() + " / " + spawner.waves.Capacity.ToString();
-
+        ManageWaveSpawning();
 
     }
 
-    private void ShowVictoryScreen()
+    public void SwitchSpawningWavges()
     {
-        Debug.Log("Victorey");
+        lm.startedSpawningWaves = !lm.startedSpawningWaves;
+    }
+
+    private void ManageWaveSpawning()
+    {
+        health_display.GetComponent<Text>().text = currentHealth.ToString();
+        money_display.GetComponent<Text>().text = currentMoney.ToString();
+
+
+        if (lm.startedSpawningWaves)
+        {
+            int enemyCount = GameObject.FindGameObjectsWithTag("Enemy").Length;
+            if (enemyCount == 0)
+            {
+                if (waveNumber >= spawner.waves.Capacity)
+                {
+                    lm.ShowVictoryScreen();
+                    return;
+                }
+                spawner.SpawnWave(waveNumber);
+                waveNumber += 1;
+            }
+
+            enemy_display.GetComponent<Text>().text = enemyCount.ToString();
+            wave_display.GetComponent<Text>().text = waveNumber.ToString() + " / " + spawner.waves.Capacity.ToString();
+        }
+        
     }
 
     private void checkIfEnemiesAreInBase(float radius)
@@ -75,10 +85,18 @@ public class HeadQuaters : MonoBehaviour
             {
             Destroy(hit.collider.gameObject);
             currentHealth -= 10;
-            //money -= 10;
+            if (currentHealth <= 0)
+                {
+                    TurnOnGameOver();
+                }
 
             }
         }
     }
 
+    private void TurnOnGameOver()
+    {
+        lm.ShowGameOverScreen();
+        FindObjectOfType<Shooting>().enabled = false;
+    }
 }

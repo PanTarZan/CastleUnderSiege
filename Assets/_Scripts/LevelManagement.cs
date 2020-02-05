@@ -9,7 +9,14 @@ public class LevelManagement : MonoBehaviour
     private HeadQuaters HQ;
     private CameraRaycaster CameraRaycaster;
     private DialogManager DM;
-    
+
+    public GameObject VictoryScreen;
+    public GameObject GameOverScreen;
+
+    public GameObject gameUI;
+    public bool startedSpawningWaves = false;
+
+
     public bool isGamePaused = false;
     
 
@@ -35,6 +42,21 @@ public class LevelManagement : MonoBehaviour
         }
 
         CheckIfGameIsPaused();
+    }
+
+
+
+    public void ShowVictoryScreen()
+    {
+        VictoryScreen.SetActive(true);
+        gameUI.SetActive(false);
+        
+    }
+
+    public void ShowGameOverScreen()
+    {
+        GameOverScreen.SetActive(true);
+        gameUI.SetActive(false);
     }
 
     public void SwitchPausedState()
