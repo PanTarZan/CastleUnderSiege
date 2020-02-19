@@ -60,6 +60,8 @@
      <Compile Include="Assets\_Prefabs\Explosions\RFX4_LightCurves.cs" />
      <Compile Include="Assets\_Prefabs\Explosions\RFX4_ShaderFloatCurve.cs" />
      <Compile Include="Assets\_Scripts\CameraRaycaster.cs" />
+     <Compile Include="Assets\_Scripts\CUS_UI_Screen.cs" />
+     <Compile Include="Assets\_Scripts\CUS_UI_System.cs" />
      <Compile Include="Assets\_Scripts\DamagePopup.cs" />
      <Compile Include="Assets\_Scripts\DialogManager.cs" />
      <Compile Include="Assets\_Scripts\DialogObject.cs" />
@@ -216,6 +218,7 @@
      <None Include="Assets\TextMesh Pro\Resources\Shaders\TMPro_Surface.cginc" />
      <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_SDF-Mobile Overlay.shader" />
      <None Include="Assets\PostProcessing\Resources\Shaders\Bloom.shader" />
+     <None Include="Assets\_Scenes\Textures\grass1-unity\About these PBR files.txt" />
      <None Include="Assets\_UI\FONTS\rubber-biscuit\express.txt" />
      <None Include="Assets\Rocks and Boulders 2\Shaders\Blend SM3.shader" />
      <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_Bitmap.shader" />
@@ -224,6 +227,7 @@
      <None Include="Assets\PostProcessing\Resources\Shaders\EyeAdaptation.shader" />
      <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_SDF.shader" />
      <None Include="Assets\PostProcessing\Resources\Shaders\ColorGrading.cginc" />
+     <None Include="Assets\_Scenes\Textures\branches_twisted_Normal-unity\About these PBR files.txt" />
      <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_SDF-Mobile.shader" />
      <None Include="Assets\PostProcessing\Resources\Shaders\AmbientOcclusion.cginc" />
      <None Include="Assets\Rocks and Boulders 2\Shaders\Blend SM2.shader" />
