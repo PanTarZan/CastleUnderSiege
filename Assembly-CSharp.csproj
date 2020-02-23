@@ -142,8 +142,6 @@
      <Compile Include="Assets\_Prefabs\Explosions\RFX4_LightCurves.cs" />
      <Compile Include="Assets\_Prefabs\Explosions\RFX4_ShaderFloatCurve.cs" />
      <Compile Include="Assets\_Scripts\CameraRaycaster.cs" />
-     <Compile Include="Assets\_Scripts\CUS_UI_Screen.cs" />
-     <Compile Include="Assets\_Scripts\CUS_UI_System.cs" />
      <Compile Include="Assets\_Scripts\DamagePopup.cs" />
      <Compile Include="Assets\_Scripts\DialogManager.cs" />
      <Compile Include="Assets\_Scripts\DialogObject.cs" />
@@ -154,13 +152,15 @@
      <Compile Include="Assets\_Scripts\HeadQuaters.cs" />
      <Compile Include="Assets\_Scripts\Health.cs" />
      <Compile Include="Assets\_Scripts\LevelManagement.cs" />
-     <Compile Include="Assets\_Scripts\MenuManagement.cs" />
      <Compile Include="Assets\_Scripts\PathManager.cs" />
      <Compile Include="Assets\_Scripts\Pointer.cs" />
      <Compile Include="Assets\_Scripts\PredistedFallSystem.cs" />
      <Compile Include="Assets\_Scripts\Projectile.cs" />
      <Compile Include="Assets\_Scripts\Shooting.cs" />
      <Compile Include="Assets\_Scripts\WaveData.cs" />
+     <Compile Include="Assets\_UI\_UiAnimations\CUS_UI_Animations\CUS_UI_Load_Level_Screen.cs" />
+     <Compile Include="Assets\_UI\_UiAnimations\CUS_UI_Animations\CUS_UI_Screen.cs" />
+     <Compile Include="Assets\_UI\_UiAnimations\CUS_UI_Animations\CUS_UI_System.cs" />
      <None Include="Assets\_Effects\PostProcessing\Resources\Shaders\DepthOfField.shader" />
      <None Include="Assets\_Prefabs\Tower Defence\Shaders\Double Side.shader" />
      <None Include="Assets\_3dModels\Props\Rocks and Boulders 2\Shaders\shader info.txt" />
