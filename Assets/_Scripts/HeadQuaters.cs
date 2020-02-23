@@ -6,10 +6,10 @@ using UnityEngine.UI;
 
 public class HeadQuaters : MonoBehaviour
 {
-    [SerializeField] GameObject health_display;
-    [SerializeField] GameObject money_display;
-    [SerializeField] GameObject enemy_display;
-    [SerializeField] GameObject wave_display;
+    [SerializeField] GameObject health_display = null;
+    [SerializeField] GameObject money_display = null;
+    [SerializeField] GameObject enemy_display = null;
+    [SerializeField] GameObject wave_display = null;
     [SerializeField] float health =100;
     [SerializeField] public GameObject centerOfBase = null;
     [SerializeField] float checkIfEnemyRadius=1;

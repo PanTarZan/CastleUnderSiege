@@ -6,7 +6,7 @@ using UnityStandardAssets.Characters.FirstPerson;
 public class CameraRaycaster : MonoBehaviour
 {
 
-    [SerializeField] GameObject PointerPrefab;
+    [SerializeField] GameObject PointerPrefab = null;
     GameObject Pointer = null;
     Camera cam;
     public Vector3 pointerLocation;

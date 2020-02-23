@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class Health : MonoBehaviour
 {
-    [SerializeField] GameObject damagePopupPrefab;
-    [SerializeField] float health;
+    [SerializeField] GameObject damagePopupPrefab = null;
+    [SerializeField] float health = 1;
     public float current_health;
     // Start is called before the first frame update
     void Start()

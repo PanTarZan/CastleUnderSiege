@@ -7,32 +7,30 @@ using UnityEngine.UI;
 
 public class DialogManager : MonoBehaviour
 {
-    
+    [Header("Main Properties")]
+
+    public CUS_UI_Screen screenAfterDialog;
     [SerializeField] public Camera dialogCamera;
     [SerializeField] public GameObject mainCamera;
+    [SerializeField] public AudioClip DialogMusic;
 
+    [Header("UI Panels")]
     [SerializeField] public Canvas dialogCanvas;
-
     [SerializeField] public GameObject namePanel;
     [SerializeField] public GameObject textPanel;
     [SerializeField] public GameObject characterGraphic;
 
-    [SerializeField] public AudioClip DialogMusic;
 
-
-    private LevelManagement lm;
+    [Header("Dialog Entries")]
     public DialogObject[] listOfLines;
-
     private Queue<string> sentences;
     private Queue<DialogObject> dialogs;
     
     public void Start()
     {
-        lm = gameObject.GetComponent<LevelManagement>();
-        BeginDialog();
     }
 
-    private void BeginDialog()
+    public void BeginDialog()
     {
         var ac = GetComponent<AudioSource>();
         ac.clip = DialogMusic;
@@ -60,7 +58,7 @@ public class DialogManager : MonoBehaviour
         }
 
         var dialogEntry = dialogs.Dequeue();
-        string actorName = dialogEntry.Character.name;
+        string actorName = dialogEntry.Character.character_name;
         
         SetActorUIProperties(dialogEntry);
 
@@ -75,7 +73,7 @@ public class DialogManager : MonoBehaviour
     private void SetActorUIProperties(DialogObject dialogEntry)
     {
         characterGraphic.GetComponent<Image>().sprite = dialogEntry.Character.graphic;
-        namePanel.GetComponentInChildren<Text>().text = dialogEntry.Character.name;
+        namePanel.GetComponentInChildren<Text>().text = dialogEntry.Character.character_name;
         //namePanel.GetComponent<Image>().color = dialogEntry.Character.borderColor;
         //textPanel.GetComponent<Image>().color = dialogEntry.Character.borderColor;
     }
@@ -106,9 +104,10 @@ public class DialogManager : MonoBehaviour
 
     public void EndDialog()
     {
-        Debug.Log("EndDialog");
         gameObject.GetComponent<LevelManagement>().enabled = true;
         gameObject.GetComponent<HeadQuaters>().enabled = true;
+
+        FindObjectOfType<CUS_UI_System>().SwitchScreens(screenAfterDialog);
 
         var ac = GetComponent<AudioSource>();
         ac.Stop();
@@ -118,7 +117,6 @@ public class DialogManager : MonoBehaviour
         dialogCanvas.gameObject.SetActive(false);
         mainCamera.SetActive(true);
         dialogCamera.gameObject.SetActive(false);
-        lm.gameUI.SetActive(true);
     }
 }
 

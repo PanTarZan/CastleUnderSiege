@@ -1,8 +1,6 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿
 
-public class ExplosionHandler : MonoBehaviour
+/*public class ExplosionHandler : MonoBehaviour
 {
     ParticleSystem ps;
     float dissappearTimer;
@@ -25,4 +23,4 @@ public class ExplosionHandler : MonoBehaviour
         Instantiate(explosion_prefab, poisiton, Quaternion.identity);
         GetComponent<AudioSource>().Play();
     }
-}
+} */ 
