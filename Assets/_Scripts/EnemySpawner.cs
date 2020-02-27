@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using UnityStandardAssets.Characters.ThirdPerson;
 
 public class EnemySpawner : MonoBehaviour
@@ -10,15 +11,17 @@ public class EnemySpawner : MonoBehaviour
     public List<WaveData> waves = new List<WaveData>();
     public Transform baseToAttackObject;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-    }
+    private int waveNumber = 0;
+    GameObject target;
+    public bool startedSpawningWaves = false;
 
-    // Update is called once per frame
+
+    [SerializeField] GameObject enemy_display = null;
+    [SerializeField] GameObject wave_display = null;
+
     void Update()
     {
-
+        ManageWaveSpawning();
     }
 
     public void SpawnWave(int waveNumber)
@@ -27,7 +30,7 @@ public class EnemySpawner : MonoBehaviour
         {
             if (loc == null)
             {
-                return;
+                continue;
             }
 
             for (int i=0; i<= waves[waveNumber].enemyAmount; i++)
@@ -37,5 +40,36 @@ public class EnemySpawner : MonoBehaviour
                 enemyAI.SetTarget(baseToAttackObject);
             }
         }
+    }
+
+    public void SetSpawningWavges(bool value)
+    {
+        startedSpawningWaves = value;
+    }
+
+    private void ManageWaveSpawning()
+    {
+        if (startedSpawningWaves)
+        {
+            int enemyCount = GameObject.FindGameObjectsWithTag("Enemy").Length;
+            if (enemyCount == 0)
+            {
+                if (waveNumber >= waves.Capacity)
+                {
+                    FindObjectOfType<LevelManagement>().ShowVictoryScreen();
+                    return;
+                }
+                SpawnWave(waveNumber);
+                waveNumber += 1;
+            }
+
+            enemy_display.GetComponent<Text>().text = enemyCount.ToString();
+            wave_display.GetComponent<Text>().text = waveNumber.ToString() + " / " + waves.Capacity.ToString();
+        }
+        else
+        {
+            enemy_display.GetComponent<Text>().text = "N/A";
+        }
+
     }
 }

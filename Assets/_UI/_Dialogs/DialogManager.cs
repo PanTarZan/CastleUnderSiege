@@ -25,10 +25,6 @@ public class DialogManager : MonoBehaviour
     public DialogObject[] listOfLines;
     private Queue<string> sentences;
     private Queue<DialogObject> dialogs;
-    
-    public void Start()
-    {
-    }
 
     public void BeginDialog()
     {
@@ -38,7 +34,6 @@ public class DialogManager : MonoBehaviour
 
         sentences = new Queue<string>();
         dialogs = new Queue<DialogObject>();
-        dialogCanvas.gameObject.SetActive(true);
 
         dialogs.Clear();
         foreach (var actor in listOfLines)
@@ -104,19 +99,18 @@ public class DialogManager : MonoBehaviour
 
     public void EndDialog()
     {
-        gameObject.GetComponent<LevelManagement>().enabled = true;
-        gameObject.GetComponent<HeadQuaters>().enabled = true;
+        FindObjectOfType<HeadQuaters>().GetComponent<HeadQuaters>().enabled = true;
 
         FindObjectOfType<CUS_UI_System>().SwitchScreens(screenAfterDialog);
 
         var ac = GetComponent<AudioSource>();
         ac.Stop();
-        ac.clip = gameObject.GetComponent<HeadQuaters>().StageMusic;
+        ac.clip = gameObject.GetComponent<LevelManagement>().StageMusic;
         ac.Play();
         
-        dialogCanvas.gameObject.SetActive(false);
         mainCamera.SetActive(true);
         dialogCamera.gameObject.SetActive(false);
+
     }
 }
 

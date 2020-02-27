@@ -10,17 +10,17 @@ public class LevelManagement : MonoBehaviour
     private CameraRaycaster CameraRaycaster;
     private DialogManager DM;
 
-    public GameObject VictoryScreen;
-    public GameObject GameOverScreen;
-
-    public GameObject gameUI;
-    public bool startedSpawningWaves = false;
+    public CUS_UI_Screen VictoryScreen;
+    public CUS_UI_Screen GameOverScreen;
+    public CUS_UI_Screen PausedScreen;
+    public CUS_UI_Screen gameUI;
 
 
     public bool isGamePaused = false;
-    
 
-    public GameObject PausedScreen;
+
+
+    public AudioClip StageMusic;
 
     // Start is called before the first frame update
     void Start()
@@ -28,54 +28,47 @@ public class LevelManagement : MonoBehaviour
         HQ = gameObject.GetComponent<HeadQuaters>();
         CameraRaycaster = FindObjectOfType<CameraRaycaster>();
         DM = gameObject.GetComponent<DialogManager>();
-        gameObject.GetComponent<LevelManagement>().enabled = false;
-        DM.enabled = true;
     }
-    
+
 
     // Update is called once per frame
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.Escape))
         {
-            SwitchPausedState();
+            Debug.Log("Escape pressed");
+            PauseGame();
         }
-
-        CheckIfGameIsPaused();
     }
 
 
 
     public void ShowVictoryScreen()
     {
-        VictoryScreen.SetActive(true);
-        gameUI.SetActive(false);
-        
+        FindObjectOfType<CUS_UI_System>().SwitchScreens(VictoryScreen);
     }
 
     public void ShowGameOverScreen()
     {
-        GameOverScreen.SetActive(true);
-        gameUI.SetActive(false);
+        FindObjectOfType<CUS_UI_System>().SwitchScreens(GameOverScreen);
     }
 
-    public void SwitchPausedState()
+    public void PauseGame()
     {
-        isGamePaused = !isGamePaused;
+        isGamePaused = true;
+        Time.timeScale = 0;
+        FindObjectOfType<CUS_UI_System>().SwitchScreens(PausedScreen);
     }
 
-    private void CheckIfGameIsPaused()
+    public void ResumeGame()
     {
+        Time.timeScale = 1;
+        FindObjectOfType<CUS_UI_System>().GoToPreviousScreen();
+    }
 
-        if (isGamePaused)
-        {
-            Time.timeScale = 0;
-            PausedScreen.SetActive(isGamePaused);
-        }
-        else
-        {
-            Time.timeScale = 1;
-            PausedScreen.SetActive(isGamePaused);
-        }
+    public void TurnOnGameOver()
+    {
+        ShowGameOverScreen();
+        FindObjectOfType<Shooting>().enabled = false;
     }
 }

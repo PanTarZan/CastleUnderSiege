@@ -112,8 +112,10 @@ public class CUS_UI_System : MonoBehaviour
         {
             float progress = Mathf.Clamp01(operation.progress / 0.9f);
             Debug.Log(progress);
-            
-            slider.value = progress;
+            if (slider)
+            {
+                slider.value = progress;
+            }
             yield return null;
         }
     }
