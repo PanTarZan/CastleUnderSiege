@@ -3,13 +3,17 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Xml;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.UI;
 
 public class DialogManager : MonoBehaviour
 {
-    [Header("Main Properties")]
+    [Header("Dialog Events")]
+    public UnityEvent OnDialogBegin;
+    public UnityEvent OnDialogFinish;
 
-    public CUS_UI_Screen screenAfterDialog;
+    [Header("Main Properties")]
+    //public CUS_UI_Screen screenAfterDialog;
     [SerializeField] public Camera dialogCamera;
     [SerializeField] public GameObject mainCamera;
     [SerializeField] public AudioClip DialogMusic;
@@ -28,9 +32,12 @@ public class DialogManager : MonoBehaviour
 
     public void BeginDialog()
     {
+        OnDialogBegin.Invoke();
+        /*
         var ac = GetComponent<AudioSource>();
         ac.clip = DialogMusic;
-        ac.Play();
+        ac.Play(); 
+        */
 
         sentences = new Queue<string>();
         dialogs = new Queue<DialogObject>();
@@ -99,8 +106,9 @@ public class DialogManager : MonoBehaviour
 
     public void EndDialog()
     {
+        OnDialogFinish.Invoke();
+        /*
         FindObjectOfType<HeadQuaters>().GetComponent<HeadQuaters>().enabled = true;
-
         FindObjectOfType<CUS_UI_System>().SwitchScreens(screenAfterDialog);
 
         var ac = GetComponent<AudioSource>();
@@ -110,7 +118,7 @@ public class DialogManager : MonoBehaviour
         
         mainCamera.SetActive(true);
         dialogCamera.gameObject.SetActive(false);
-
+        */
     }
 }
 

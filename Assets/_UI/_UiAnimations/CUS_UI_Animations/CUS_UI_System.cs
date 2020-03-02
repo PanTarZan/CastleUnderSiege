@@ -59,6 +59,7 @@ public class CUS_UI_System : MonoBehaviour
             m_Fader.CrossFadeAlpha(0f, m_FadeInDuration, false);
         }
     }
+
     public void FadeOut()
     {
         if (m_Fader)
@@ -66,7 +67,6 @@ public class CUS_UI_System : MonoBehaviour
             m_Fader.CrossFadeAlpha(1f, m_FadeOutDuration, false);
         }
     }
-
 
     public void SwitchScreens(CUS_UI_Screen aScreen)
     {

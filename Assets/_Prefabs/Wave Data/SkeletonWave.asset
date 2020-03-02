@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 33596f2fabfabc842aa641d9c7aabbd6, type: 3}
   m_Name: SkeletonWave
   m_EditorClassIdentifier: 
-  enemyAmount: 5
+  enemyAmount: 1
   enemyPrefab: {fileID: 4122027881861776249, guid: a4ac7160b5e45fe4cacffd78b2501d46,
     type: 3}

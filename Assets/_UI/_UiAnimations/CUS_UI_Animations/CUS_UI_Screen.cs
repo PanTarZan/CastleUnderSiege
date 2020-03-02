@@ -31,7 +31,6 @@ public class CUS_UI_Screen : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
         if (m_StartSelectable)
         {
             EventSystem.current.SetSelectedGameObject(m_StartSelectable.gameObject);
@@ -49,6 +48,7 @@ public class CUS_UI_Screen : MonoBehaviour
         }
         HandleAnimator("show");
     }
+
     public virtual void CloseScreen()
     {
         if (onScreenClose != null)
