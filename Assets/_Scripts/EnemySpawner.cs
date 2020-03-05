@@ -3,7 +3,6 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-using UnityStandardAssets.Characters.ThirdPerson;
 
 public class EnemySpawner : MonoBehaviour
 {
@@ -33,10 +32,10 @@ public class EnemySpawner : MonoBehaviour
                 continue;
             }
 
-            for (int i=0; i<= waves[waveNumber].enemyAmount; i++)
+            for (int i=0; i<= waves[waveNumber].enemyAmount-1; i++)
             {
                 var enemy = Instantiate(waves[waveNumber].enemyPrefab, loc.transform.position, Quaternion.identity);
-                var enemyAI = enemy.GetComponent<AICharacterControl>();
+                var enemyAI = enemy.GetComponent<CUS_Enemy_AI>();
                 enemyAI.SetTarget(baseToAttackObject);
             }
         }

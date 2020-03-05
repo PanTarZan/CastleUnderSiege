@@ -123,10 +123,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   thrust: 0
-  rb: {fileID: 0}
   damageMIN: 19
   damageMAX: 23
-  explosionRadius: 2
+  explosionRadius: 20
   explosionEffect: {fileID: 132858, guid: dcbbdee2152660b41822b2eb0ccb8767, type: 3}
 --- !u!82 &8703425539520120882
 AudioSource:

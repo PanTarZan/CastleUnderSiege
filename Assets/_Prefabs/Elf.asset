@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5c3d7d9bc5b44e141b76a126cd077377, type: 3}
   m_Name: Elf
   m_EditorClassIdentifier: 
-  name: Elf
+  character_name: Elf
   graphic: {fileID: 21300000, guid: a65f6a10295838c419ce4bd3b840dd7d, type: 3}
   borderColor: {r: 0.07693529, g: 1, b: 0, a: 1}
   screenPosition: 

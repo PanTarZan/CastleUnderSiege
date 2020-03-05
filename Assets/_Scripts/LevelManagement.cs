@@ -17,6 +17,7 @@ public class LevelManagement : MonoBehaviour
 
 
     public bool isGamePaused = false;
+    public bool hasGameEnded = false;
 
 
 
@@ -45,12 +46,20 @@ public class LevelManagement : MonoBehaviour
 
     public void ShowVictoryScreen()
     {
-        FindObjectOfType<CUS_UI_System>().SwitchScreens(VictoryScreen);
+        if (!hasGameEnded)
+        {
+            FindObjectOfType<CUS_UI_System>().SwitchScreens(VictoryScreen);
+            hasGameEnded = true;
+        }
     }
 
     public void ShowGameOverScreen()
     {
-        FindObjectOfType<CUS_UI_System>().SwitchScreens(GameOverScreen);
+        if (!hasGameEnded)
+        {
+            FindObjectOfType<CUS_UI_System>().SwitchScreens(GameOverScreen);
+            hasGameEnded = true;
+        }
     }
 
     public void PauseGame()

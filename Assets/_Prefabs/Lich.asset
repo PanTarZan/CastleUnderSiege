@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5c3d7d9bc5b44e141b76a126cd077377, type: 3}
   m_Name: Lich
   m_EditorClassIdentifier: 
-  name: Czlowiek Szpadel
+  character_name: Czlowiek Szpadel
   graphic: {fileID: 21300000, guid: 63dd7c8ec648f814f9b1598a81f86b1d, type: 3}
   borderColor: {r: 1, g: 0, b: 0.9104991, a: 1}
   screenPosition: 

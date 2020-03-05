@@ -421,8 +421,6 @@ GameObject:
   - component: {fileID: 7506746138030891151}
   - component: {fileID: 5604699192100299611}
   - component: {fileID: 6439688197797187743}
-  - component: {fileID: 6425693117840046218}
-  - component: {fileID: 7616667216211819007}
   - component: {fileID: 719638305809719746}
   - component: {fileID: 5195337530545673464}
   m_Layer: 0
@@ -499,33 +497,6 @@ CapsuleCollider:
   m_Height: 4.96
   m_Direction: 1
   m_Center: {x: 0, y: 2.06, z: 0}
---- !u!114 &6425693117840046218
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 118136}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8c5335f0882fe4d478883cc8c58ce906, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  target: {fileID: 0}
---- !u!114 &7616667216211819007
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 118136}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ce7a80d520cacc042b5fe14f373d8173, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_MovingTurnSpeed: 360
-  m_StationaryTurnSpeed: 180
 --- !u!195 &719638305809719746
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -562,8 +533,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damagePopupPrefab: {fileID: 5796569754855487803, guid: 03e37da402f8c7f4aa6d429f7032ba33,
     type: 3}
-  starting_health: 500
+  starting_health: 200
   dieTime: 4
+  target: {fileID: 0}
+  m_MovingTurnSpeed: 360
+  m_StationaryTurnSpeed: 180
 --- !u!1 &120172
 GameObject:
   m_ObjectHideFlags: 0

@@ -14,35 +14,32 @@ public class DialogManager : MonoBehaviour
 
     [Header("Main Properties")]
     //public CUS_UI_Screen screenAfterDialog;
-    [SerializeField] public Camera dialogCamera;
-    [SerializeField] public GameObject mainCamera;
-    [SerializeField] public AudioClip DialogMusic;
+    [SerializeField]  Camera dialogCamera;
+    [SerializeField]  GameObject mainCamera;
+    [SerializeField]  AudioClip DialogMusic;
 
     [Header("UI Panels")]
-    [SerializeField] public Canvas dialogCanvas;
-    [SerializeField] public GameObject namePanel;
-    [SerializeField] public GameObject textPanel;
-    [SerializeField] public GameObject characterGraphic;
+    [SerializeField]  Canvas dialogCanvas;
+    [SerializeField]  GameObject namePanel;
+    [SerializeField]  GameObject textPanel;
+    [SerializeField]  GameObject characterGraphic;
 
 
     [Header("Dialog Entries")]
     public DialogObject[] listOfLines;
     private Queue<string> sentences;
     private Queue<DialogObject> dialogs;
+    private Coroutine currentCoroutine;
 
     public void BeginDialog()
     {
         OnDialogBegin.Invoke();
-        /*
-        var ac = GetComponent<AudioSource>();
-        ac.clip = DialogMusic;
-        ac.Play(); 
-        */
 
         sentences = new Queue<string>();
         dialogs = new Queue<DialogObject>();
 
         dialogs.Clear();
+
         foreach (var actor in listOfLines)
         {
             dialogs.Enqueue(actor);
@@ -76,49 +73,41 @@ public class DialogManager : MonoBehaviour
     {
         characterGraphic.GetComponent<Image>().sprite = dialogEntry.Character.graphic;
         namePanel.GetComponentInChildren<Text>().text = dialogEntry.Character.character_name;
-        //namePanel.GetComponent<Image>().color = dialogEntry.Character.borderColor;
-        //textPanel.GetComponent<Image>().color = dialogEntry.Character.borderColor;
     }
 
     public void DisplayNextSentence()
     {
+        if (currentCoroutine != null)
+        {
+            StopCoroutine(currentCoroutine);
+        }
+
         if (sentences.Count == 0)
         {
             StartNextActor();
             return;
         }
         string sentence = sentences.Dequeue();
-        StartCoroutine(UpdateTextPanel(sentence));
+        currentCoroutine = StartCoroutine(UpdateTextPanel(sentence));
+        
     }
 
     private IEnumerator UpdateTextPanel(string sentence)
     {
         string text_to_display = "";
-
         foreach (var letter in sentence)
         {
             text_to_display += letter;
             textPanel.GetComponentInChildren<Text>().text = text_to_display;
             yield return null;
         }
-
     }
 
     public void EndDialog()
     {
+        StopCoroutine(currentCoroutine);
         OnDialogFinish.Invoke();
-        /*
-        FindObjectOfType<HeadQuaters>().GetComponent<HeadQuaters>().enabled = true;
-        FindObjectOfType<CUS_UI_System>().SwitchScreens(screenAfterDialog);
-
-        var ac = GetComponent<AudioSource>();
-        ac.Stop();
-        ac.clip = gameObject.GetComponent<LevelManagement>().StageMusic;
-        ac.Play();
-        
-        mainCamera.SetActive(true);
-        dialogCamera.gameObject.SetActive(false);
-        */
     }
+    
 }
 

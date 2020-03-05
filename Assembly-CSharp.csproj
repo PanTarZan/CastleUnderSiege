@@ -54,6 +54,14 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\_3dModels\Props\Rocks and Boulders 2\Shaders\RotateGameObject.cs" />
+     <Compile Include="Assets\_3dModels\Standard Assets\Environment\Water\Water\Scripts\Displace.cs" />
+     <Compile Include="Assets\_3dModels\Standard Assets\Environment\Water\Water\Scripts\GerstnerDisplace.cs" />
+     <Compile Include="Assets\_3dModels\Standard Assets\Environment\Water\Water\Scripts\MeshContainer.cs" />
+     <Compile Include="Assets\_3dModels\Standard Assets\Environment\Water\Water\Scripts\PlanarReflection.cs" />
+     <Compile Include="Assets\_3dModels\Standard Assets\Environment\Water\Water\Scripts\SpecularLighting.cs" />
+     <Compile Include="Assets\_3dModels\Standard Assets\Environment\Water\Water\Scripts\Water.cs" />
+     <Compile Include="Assets\_3dModels\Standard Assets\Environment\Water\Water\Scripts\WaterBase.cs" />
+     <Compile Include="Assets\_3dModels\Standard Assets\Environment\Water\Water\Scripts\WaterTile.cs" />
      <Compile Include="Assets\_Effects\KriptoFX\Realistic Effects Pack v4\Effects\Scripts\Curves\RFX4_PhysicsForceCurves.cs" />
      <Compile Include="Assets\_Effects\KriptoFX\Realistic Effects Pack v4\Effects\Scripts\Curves\RFX4_ScaleCurves.cs" />
      <Compile Include="Assets\_Effects\KriptoFX\Realistic Effects Pack v4\Effects\Scripts\Curves\RFX4_ShaderColorGradient.cs" />
@@ -136,7 +144,7 @@
      <Compile Include="Assets\_Effects\PostProcessing\Runtime\Utils\RenderTextureFactory.cs" />
      <Compile Include="Assets\_Effects\PostProcessing\Utilities\CustomMotionTexture\ExampleWheelController.cs" />
      <Compile Include="Assets\_Prefabs\_CAMERA\CameraRaycaster.cs" />
-     <Compile Include="Assets\_Prefabs\_Enemies\Health.cs" />
+     <Compile Include="Assets\_Prefabs\_Enemies\CUS_Enemy_AI.cs" />
      <Compile Include="Assets\_Prefabs\_Enemies\HEROIC FANTASY CREATURES FULL PACK\DEMONIC CREATURES PACK\DEMON LORD\SCRIPT\ScrollingUVs.cs" />
      <Compile Include="Assets\_Prefabs\_MousePointer\Pointer.cs" />
      <Compile Include="Assets\_Prefabs\_Projectiles\Projectile.cs" />
@@ -182,6 +190,7 @@
      <None Include="Assets\_Effects\PostProcessing\Editor Resources\Monitors\HistogramCompute.compute" />
      <None Include="Assets\_Effects\PostProcessing\Resources\Shaders\Uber.shader" />
      <None Include="Assets\_UI\_DamagePopup\TextMesh Pro\Resources\Shaders\TMP_Bitmap-Custom-Atlas.shader" />
+     <None Include="Assets\_3dModels\Standard Assets\Environment\Water\Water4\Shaders\FXWater4Simple.shader" />
      <None Include="Assets\_Effects\PostProcessing\Resources\Shaders\Blit.shader" />
      <None Include="Assets\_Effects\PostProcessing\Editor Resources\Monitors\WaveformRender.shader" />
      <None Include="Assets\_Effects\PostProcessing\Editor Resources\Monitors\VectorscopeCompute.compute" />
@@ -191,6 +200,7 @@
      <None Include="Assets\_UI\FONTS\chlorinar\1001fonts-chlorinar-eula.txt" />
      <None Include="Assets\_Effects\PostProcessing\Resources\Bluenoise64\LICENSE.txt" />
      <None Include="Assets\_Effects\PostProcessing\Resources\Shaders\BuiltinDebugViews.shader" />
+     <None Include="Assets\_3dModels\Standard Assets\Environment\Water\DO_NOT_WORK_IN_VR.txt" />
      <None Include="Assets\_Prefabs\Explosions\RFX4_UberParticleShader.shader" />
      <None Include="Assets\_3dModels\Props\Fantasy Forest Environment Free Sample\StandardNoCulling.shader" />
      <None Include="Assets\_Effects\PostProcessing\Resources\Shaders\Common.cginc" />
@@ -208,6 +218,7 @@
      <None Include="Assets\_UI\_DamagePopup\TextMesh Pro\Resources\Shaders\TMP_Bitmap-Mobile.shader" />
      <None Include="Assets\_UI\FONTS\freaks-of-nature\pizzadudedotdk.txt" />
      <None Include="Assets\_Effects\PostProcessing\Resources\Shaders\EyeAdaptation.cginc" />
+     <None Include="Assets\_3dModels\Standard Assets\Environment\Water\Water\Shaders\FXWaterPro.shader" />
      <None Include="Assets\_Effects\PostProcessing\Resources\Shaders\GrainGen.shader" />
      <None Include="Assets\_Effects\PostProcessing\Resources\Shaders\FXAA.shader" />
      <None Include="Assets\_UI\_DamagePopup\TextMesh Pro\Resources\Shaders\TMP_SDF Overlay.shader" />
@@ -224,8 +235,10 @@
      <None Include="Assets\_UI\_DamagePopup\TextMesh Pro\Resources\Shaders\TMPro.cginc" />
      <None Include="Assets\_Effects\PostProcessing\Editor Resources\Monitors\VectorscopeRender.shader" />
      <None Include="Assets\_Effects\PostProcessing\Resources\Shaders\EyeAdaptation.shader" />
+     <None Include="Assets\_3dModels\Standard Assets\Environment\Water\Water4\Shaders\WaterInclude.cginc" />
      <None Include="Assets\_UI\_DamagePopup\TextMesh Pro\Resources\Shaders\TMP_SDF.shader" />
      <None Include="Assets\_Effects\PostProcessing\Resources\Shaders\ColorGrading.cginc" />
+     <None Include="Assets\_3dModels\Standard Assets\Environment\Water\Water4\Shaders\FXWater4Advanced.shader" />
      <None Include="Assets\_Scenes\Textures\branches_twisted_Normal-unity\About these PBR files.txt" />
      <None Include="Assets\_UI\_DamagePopup\TextMesh Pro\Resources\Shaders\TMP_SDF-Mobile.shader" />
      <None Include="Assets\_Effects\PostProcessing\Resources\Shaders\AmbientOcclusion.cginc" />
@@ -815,10 +828,6 @@
  <Reference Include="System.Xml.Serialization">
  <HintPath>F:/Unity/Editor/Data/NetStandard/compat/2.0.0/shims/netfx/System.Xml.Serialization.dll</HintPath>
  </Reference>
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="Assembly-CSharp-firstpass.csproj">
-      <Project>{DC42BEA2-7C44-4B40-F5F9-A9CA3D678067}</Project>      <Name>Assembly-CSharp-firstpass</Name>    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

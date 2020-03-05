@@ -1,15 +1,13 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class Projectile : MonoBehaviour
 {
-    public float thrust;
-    public Rigidbody rb;
-    public float damageMIN;
-    public float damageMAX;
-    public float explosionRadius;
+    [SerializeField] float thrust;
+    [SerializeField] float damageMIN;
+    [SerializeField] float damageMAX;
+    [SerializeField] float explosionRadius;
     public GameObject explosionEffect;
+    Rigidbody rb;
 
     void Start()
     {
@@ -25,16 +23,20 @@ public class Projectile : MonoBehaviour
     void Explode()
     {
         Instantiate(explosionEffect, transform.position, transform.rotation);
-        RaycastHit[] hit = Physics.SphereCastAll(transform.position, explosionRadius, new Vector3(0,0.1f,0));
+        RaycastHit[] hit = Physics.SphereCastAll(transform.position, explosionRadius, Vector3.up);
+        DamageAllObjects(hit);
+        Destroy(gameObject);
+    }
+
+    private void DamageAllObjects(RaycastHit[] hit)
+    {
         foreach (var h in hit)
         {
-            if (h.transform.GetComponent<Health>())
+            if (h.transform.GetComponent<CUS_Enemy_AI>())
             {
                 float damage = Random.Range(damageMIN, damageMAX);
-                h.transform.GetComponent<Health>().TakeDamage(damage);
+                h.transform.GetComponent<CUS_Enemy_AI>().TakeDamage(damage);
             }
         }
-        Destroy(gameObject);
-
     }
 }

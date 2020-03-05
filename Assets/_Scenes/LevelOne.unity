@@ -708,6 +708,7 @@ MonoBehaviour:
   PausedScreen: {fileID: 1862189560}
   gameUI: {fileID: 1981562623}
   isGamePaused: 0
+  hasGameEnded: 0
   StageMusic: {fileID: 8300000, guid: 0be958302fe7891419b8c07f5ca301eb, type: 3}
 --- !u!1001 &139948374
 PrefabInstance:
@@ -9371,6 +9372,17 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1443787485}
+        m_MethodName: set_interactable
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
   dialogCamera: {fileID: 663253558}
@@ -13617,6 +13629,17 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1029630015}
+        m_MethodName: 
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &1443787486
@@ -14078,7 +14101,8 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 1161397034}
   waves:
-  - {fileID: 11400000, guid: bf7a94c8c23835f4d8cdaa1632c2e367, type: 2}
+  - {fileID: 11400000, guid: 2a476c5ca30d24c49848eda645cc84f4, type: 2}
+  - {fileID: 11400000, guid: 2a476c5ca30d24c49848eda645cc84f4, type: 2}
   - {fileID: 11400000, guid: bf7a94c8c23835f4d8cdaa1632c2e367, type: 2}
   baseToAttackObject: {fileID: 1512308659}
   startedSpawningWaves: 0
@@ -20270,19 +20294,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   PointerPrefab: {fileID: 3510378926110928655, guid: 73e402047d6456341b9e05a0726e5693,
     type: 3}
-  pointerLocation: {x: 0, y: 0, z: 0}
   mouseLook:
     XSensitivity: 2
     YSensitivity: 2
-    clampHorizontalRotation: 1
-    clampVerticalRotation: 1
-    MinimumX: -45
-    MaximumX: 65
-    MinimumY: -50
-    MaximumY: 70
-    smooth: 0
-    smoothTime: 5
-    lockCursor: 0
 --- !u!1 &2146522142
 GameObject:
   m_ObjectHideFlags: 0
