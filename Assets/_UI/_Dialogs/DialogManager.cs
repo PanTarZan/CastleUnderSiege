@@ -13,16 +13,12 @@ public class DialogManager : MonoBehaviour
     public UnityEvent OnDialogFinish;
 
     [Header("Main Properties")]
-    //public CUS_UI_Screen screenAfterDialog;
-    [SerializeField]  Camera dialogCamera;
-    [SerializeField]  GameObject mainCamera;
-    [SerializeField]  AudioClip DialogMusic;
+    [SerializeField]  AudioClip DialogMusic = null;
 
     [Header("UI Panels")]
-    [SerializeField]  Canvas dialogCanvas;
-    [SerializeField]  GameObject namePanel;
-    [SerializeField]  GameObject textPanel;
-    [SerializeField]  GameObject characterGraphic;
+    [SerializeField]  GameObject namePanel = null;
+    [SerializeField]  GameObject textPanel = null;
+    [SerializeField]  GameObject characterGraphic = null;
 
 
     [Header("Dialog Entries")]

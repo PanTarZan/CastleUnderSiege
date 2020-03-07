@@ -2,10 +2,10 @@
 
 public class Projectile : MonoBehaviour
 {
-    [SerializeField] float thrust;
-    [SerializeField] float damageMIN;
-    [SerializeField] float damageMAX;
-    [SerializeField] float explosionRadius;
+    [SerializeField] float thrust=1;
+    [SerializeField] float damageMIN=1;
+    [SerializeField] float damageMAX = 2 ;
+    [SerializeField] float explosionRadius =1;
     public GameObject explosionEffect;
     Rigidbody rb;
 

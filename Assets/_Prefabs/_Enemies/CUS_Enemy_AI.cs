@@ -7,6 +7,7 @@ using UnityEngine;
 public class CUS_Enemy_AI : MonoBehaviour
 {
     [Header("Health Part")]
+    [SerializeField] CUS_Health_Display healthBarPrefab = null;
     [SerializeField] GameObject damagePopupPrefab = null;
     public float starting_health;
     public float dieTime;
@@ -65,8 +66,10 @@ public class CUS_Enemy_AI : MonoBehaviour
 
     private void UpdateHealth()
     {
+        healthBarPrefab.DisplayHealth(Mathf.Clamp01(current_health / starting_health));
         if (current_health <= 0)
         {
+            current_health = 0;
             if (!is_dead)
                 StartCoroutine("Die");
             is_dead = true;

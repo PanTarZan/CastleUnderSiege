@@ -105,6 +105,17 @@ public class CUS_UI_System : MonoBehaviour
         StartCoroutine(WaitToLoadScene(sceneIndex, slider));
     }
 
+    public void ReloadScene()
+    {
+        Scene currentScene = SceneManager.GetActiveScene();
+        LoadScene(currentScene.buildIndex);
+    }
+
+    public void QuiteGame()
+    {
+        Application.Quit();
+    }
+
     public IEnumerator WaitToLoadScene(int sceneIndex, Slider slider)
     {
         AsyncOperation operation = SceneManager.LoadSceneAsync(sceneIndex);

@@ -19,10 +19,6 @@ public class LevelManagement : MonoBehaviour
     public bool isGamePaused = false;
     public bool hasGameEnded = false;
 
-
-
-    public AudioClip StageMusic;
-
     // Start is called before the first frame update
     void Start()
     {
