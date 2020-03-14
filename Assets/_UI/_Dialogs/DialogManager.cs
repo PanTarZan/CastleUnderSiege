@@ -13,7 +13,7 @@ public class DialogManager : MonoBehaviour
     public UnityEvent OnDialogFinish;
 
     [Header("Main Properties")]
-    [SerializeField]  AudioClip DialogMusic = null;
+    [SerializeField] AudioClip DialogMusic;
 
     [Header("UI Panels")]
     [SerializeField]  GameObject namePanel = null;

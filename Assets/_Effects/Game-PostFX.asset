@@ -26,7 +26,7 @@ MonoBehaviour:
         motionVectorsResolution: 24
         motionVectorsAmplitude: 64
   fog:
-    m_Enabled: 0
+    m_Enabled: 1
     m_Settings:
       excludeSkybox: 1
   antialiasing:
@@ -63,7 +63,7 @@ MonoBehaviour:
         reflectionBlur: 1
         reflectBackfaces: 0
       intensity:
-        reflectionMultiplier: 1
+        reflectionMultiplier: 0
         fadeDistance: 100
         fresnelFade: 1
         fresnelFadePower: 1
@@ -73,9 +73,9 @@ MonoBehaviour:
     m_Enabled: 0
     m_Settings:
       focusDistance: 5.16
-      aperture: 32
-      focalLength: 50
-      useCameraFov: 1
+      aperture: 0.05
+      focalLength: 30
+      useCameraFov: 0
       kernelSize: 1
   motionBlur:
     m_Enabled: 0
@@ -86,8 +86,8 @@ MonoBehaviour:
   eyeAdaptation:
     m_Enabled: 1
     m_Settings:
-      lowPercent: 1
-      highPercent: 50.99997
+      lowPercent: 90.94312
+      highPercent: 99
       minLuminance: -5
       maxLuminance: 1
       keyValue: 0.25
@@ -96,7 +96,7 @@ MonoBehaviour:
       speedUp: 2
       speedDown: 1
       logMin: -1
-      logMax: 16
+      logMax: 1
   bloom:
     m_Enabled: 0
     m_Settings:
@@ -125,13 +125,13 @@ MonoBehaviour:
         temperature: 0
         tint: 0
         hueShift: 2.56
-        saturation: 1
-        contrast: 1
+        saturation: 1.31
+        contrast: 0.99
       channelMixer:
         red: {x: 1, y: 0, z: 0}
         green: {x: 0, y: 1, z: 0}
         blue: {x: 0, y: 0, z: 1}
-        currentEditingChannel: 1
+        currentEditingChannel: 0
       colorWheels:
         mode: 1
         log:

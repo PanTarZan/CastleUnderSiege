@@ -1,4 +1,5 @@
 ﻿using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 [RequireComponent(typeof(UnityEngine.AI.NavMeshAgent))]
@@ -17,6 +18,7 @@ public class CUS_Enemy_AI : MonoBehaviour
     [Header("AI Part")]
     public Transform target;
     public UnityEngine.AI.NavMeshAgent agent { get; private set; }
+    public Queue<GameObject> routeElements = new Queue<GameObject>();
 
     [Header("TPC Part")]
     [SerializeField] float m_MovingTurnSpeed = 360;
@@ -33,6 +35,7 @@ public class CUS_Enemy_AI : MonoBehaviour
     {
         m_Animator = GetComponent<Animator>();
         current_health = starting_health;
+        
 
         //AI
         
@@ -51,17 +54,31 @@ public class CUS_Enemy_AI : MonoBehaviour
     {
         UpdateHealth();
         UpdateAIAgent();
+
     }
 
     private void UpdateAIAgent()
     {
+        
         if (target != null)
+        {
             agent.SetDestination(target.position);
+        }
+        else
+        { SetTarget(routeElements.Dequeue().transform);
+        }
 
         if (agent.remainingDistance > agent.stoppingDistance)
+        {
             Move(agent.desiredVelocity);
+        }
         else
+        {
             Move(Vector3.zero);
+        }
+        if (Mathf.Abs(Vector3.Distance(target.position, transform.position)) <= agent.stoppingDistance)
+            SetTarget(routeElements.Dequeue().transform);
+
     }
 
     private void UpdateHealth()
@@ -78,7 +95,7 @@ public class CUS_Enemy_AI : MonoBehaviour
 
     private IEnumerator Die()
     {
-        SetTarget(transform);
+        agent.speed = 0;
         m_Animator.SetTrigger("Die");
         yield return new WaitForSeconds(dieTime);
         Destroy(gameObject);

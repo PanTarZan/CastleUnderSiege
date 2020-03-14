@@ -155,10 +155,9 @@
      <Compile Include="Assets\_Prefabs\Explosions\RFX4_LightCurves.cs" />
      <Compile Include="Assets\_Prefabs\Explosions\RFX4_ShaderFloatCurve.cs" />
      <Compile Include="Assets\_Prefabs\Tower Defence\Shooting.cs" />
+     <Compile Include="Assets\_Prefabs\Wave Data\CUS_Wave_Data.cs" />
      <Compile Include="Assets\_Prefabs\Wave Data\CUS_Wave_System\CUS_Wave_Location.cs" />
      <Compile Include="Assets\_Prefabs\Wave Data\CUS_Wave_System\CUS_Wave_System.cs" />
-     <Compile Include="Assets\_Prefabs\Wave Data\WaveData.cs" />
-     <Compile Include="Assets\_Scripts\EnemySpawner.cs" />
      <Compile Include="Assets\_Scripts\HeadQuaters.cs" />
      <Compile Include="Assets\_Scripts\LevelManagement.cs" />
      <Compile Include="Assets\_UI\_DamagePopup\DamagePopup.cs" />
