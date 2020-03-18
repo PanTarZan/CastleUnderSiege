@@ -49,6 +49,7 @@ public class CUS_Wave_System : MonoBehaviour
     public void SetSpawningWaves(bool value)
     {
         startedSpawningWaves = value;
+        FindObjectOfType<LevelManagement>().isGamePaused = false;
     }
 
     private void ManageWaveSpawning()
@@ -61,6 +62,7 @@ public class CUS_Wave_System : MonoBehaviour
                 if (waveIndex >= waves.Capacity)
                 {
                     FindObjectOfType<LevelManagement>().ShowVictoryScreen();
+
                     return;
                 }
                 SpawnWave(waveIndex);

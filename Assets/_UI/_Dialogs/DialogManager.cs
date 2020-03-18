@@ -30,7 +30,7 @@ public class DialogManager : MonoBehaviour
     public void BeginDialog()
     {
         OnDialogBegin.Invoke();
-
+        FindObjectOfType<LevelManagement>().isGamePaused = true;
         sentences = new Queue<string>();
         dialogs = new Queue<DialogObject>();
 

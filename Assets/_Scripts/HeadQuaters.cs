@@ -7,6 +7,7 @@ using UnityEngine.UI;
 public class HeadQuaters : MonoBehaviour
 {
     [SerializeField] float health =100;
+    [SerializeField] float money =0;
     [SerializeField] public GameObject centerOfBase = null;
     [SerializeField] float checkIfEnemyRadius=1;
     public float currentHealth;
@@ -30,9 +31,12 @@ public class HeadQuaters : MonoBehaviour
         checkIfEnemiesAreInBase(checkIfEnemyRadius);
         health_display.GetComponent<Text>().text = currentHealth.ToString();
         money_display.GetComponent<Text>().text = currentMoney.ToString();
-
+        if (currentHealth <= 0)
+        {
+            FindObjectOfType<LevelManagement>().TurnOnGameOver();
+        }
+        
     }
-
     
 
     private void checkIfEnemiesAreInBase(float radius)
@@ -48,13 +52,10 @@ public class HeadQuaters : MonoBehaviour
             {
             Destroy(hit.collider.gameObject);
             currentHealth -= 10;
-            if (currentHealth <= 0)
-                {
-                    FindObjectOfType<LevelManagement>().TurnOnGameOver();
-                }
-
             }
         }
     }
+
+    
 
 }

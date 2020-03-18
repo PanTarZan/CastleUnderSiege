@@ -6,9 +6,9 @@ using UnityEngine.UI;
 
 public class LevelManagement : MonoBehaviour
 {
-    private HeadQuaters HQ;
-    private CameraRaycaster CameraRaycaster;
-    private DialogManager DM;
+    //private HeadQuaters HQ;
+    //private CameraRaycaster CameraRaycaster;
+    //private DialogManager DM;
 
     public CUS_UI_Screen VictoryScreen;
     public CUS_UI_Screen GameOverScreen;
@@ -22,9 +22,9 @@ public class LevelManagement : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        HQ = gameObject.GetComponent<HeadQuaters>();
-        CameraRaycaster = FindObjectOfType<CameraRaycaster>();
-        DM = gameObject.GetComponent<DialogManager>();
+        //HQ = gameObject.GetComponent<HeadQuaters>();
+        //CameraRaycaster = FindObjectOfType<CameraRaycaster>();
+        //DM = gameObject.GetComponent<DialogManager>();
     }
 
 
@@ -33,19 +33,34 @@ public class LevelManagement : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Escape))
         {
-            Debug.Log("Escape pressed");
-            PauseGame();
+            if (!isGamePaused)
+                PauseGame();
         }
+
+        ManageCursorState();
     }
 
-
+    private void ManageCursorState()
+    {
+        if (isGamePaused)
+        {
+            Cursor.visible = true;
+            Cursor.lockState = CursorLockMode.None;
+        }
+        else
+        {
+            Cursor.visible = false;
+            Cursor.lockState = CursorLockMode.Locked;
+        }
+    }
 
     public void ShowVictoryScreen()
     {
         if (!hasGameEnded)
         {
-            FindObjectOfType<CUS_UI_System>().SwitchScreens(VictoryScreen);
+            isGamePaused = true;
             hasGameEnded = true;
+            FindObjectOfType<CUS_UI_System>().SwitchScreens(VictoryScreen);
         }
     }
 
@@ -53,8 +68,10 @@ public class LevelManagement : MonoBehaviour
     {
         if (!hasGameEnded)
         {
-            FindObjectOfType<CUS_UI_System>().SwitchScreens(GameOverScreen);
             hasGameEnded = true;
+            isGamePaused = true;
+            FindObjectOfType<CUS_UI_System>().SwitchScreens(GameOverScreen);
+
         }
     }
 
@@ -69,11 +86,11 @@ public class LevelManagement : MonoBehaviour
     {
         Time.timeScale = 1;
         FindObjectOfType<CUS_UI_System>().GoToPreviousScreen();
+        isGamePaused = false;
     }
 
     public void TurnOnGameOver()
     {
         ShowGameOverScreen();
-        FindObjectOfType<Shooting>().enabled = false;
     }
 }

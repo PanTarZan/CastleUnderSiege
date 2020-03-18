@@ -98,17 +98,13 @@ public class CUS_UI_System : MonoBehaviour
         }
     }
 
-    public void LoadScene(int sceneIndex)
-    {
-        var slider = gameObject.GetComponentInChildren<Slider>();
-        Debug.Log(slider);
-        StartCoroutine(WaitToLoadScene(sceneIndex, slider));
-    }
+    
 
     public void ReloadScene()
     {
         Scene currentScene = SceneManager.GetActiveScene();
-        LoadScene(currentScene.buildIndex);
+        Time.timeScale = 1;
+        SceneManager.LoadScene(currentScene.buildIndex);
     }
 
     public void QuiteGame()
@@ -116,20 +112,7 @@ public class CUS_UI_System : MonoBehaviour
         Application.Quit();
     }
 
-    public IEnumerator WaitToLoadScene(int sceneIndex, Slider slider)
-    {
-        AsyncOperation operation = SceneManager.LoadSceneAsync(sceneIndex);
-        while (!operation.isDone)
-        {
-            float progress = Mathf.Clamp01(operation.progress / 0.9f);
-            Debug.Log(progress);
-            if (slider)
-            {
-                slider.value = progress;
-            }
-            yield return null;
-        }
-    }
+    
 
     void InitializeScreens()
     {

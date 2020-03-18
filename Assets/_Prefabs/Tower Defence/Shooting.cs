@@ -2,22 +2,25 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.UI;
 
 [RequireComponent(typeof(LineRenderer))]
 public class Shooting : MonoBehaviour
 {
 
+    [SerializeField] Image shootColdown = null;
+
     public GameObject projectilePrefab;
     public GameObject cannonStartPoint;
     public float shootCooldown;
-    private float nextFire = 0.1f;
+    public float nextFire = 0.1f;
     public GameObject CannonHead;
     public GameObject CannonBase;
 
     public LayerMask layer;
     public LineRenderer lineVisual;
     public int lineSegment = 10;
+    float resetTimer = 0;
 
 
     private Quaternion m_CharacterTargetRot;
@@ -38,6 +41,9 @@ public class Shooting : MonoBehaviour
 
         LookRotation(pointer,vo);
         Visualize(vo);
+
+
+        shootColdown.fillAmount =  ((nextFire - Time.time) / shootCooldown);
 
         if (Input.GetKey(KeyCode.Mouse0) && (nextFire <= Time.time))
         {
