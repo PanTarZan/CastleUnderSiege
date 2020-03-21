@@ -167,6 +167,7 @@
      <Compile Include="Assets\_UI\_UiAnimations\CUS_UI_Animations\CUS_UI_Load_Level_Screen.cs" />
      <Compile Include="Assets\_UI\_UiAnimations\CUS_UI_Animations\CUS_UI_Screen.cs" />
      <Compile Include="Assets\_UI\_UiAnimations\CUS_UI_Animations\CUS_UI_System.cs" />
+     <Compile Include="Assets\AudioManager.cs" />
      <Compile Include="Assets\CastingSpells.cs" />
      <Compile Include="Assets\CUS_Health_Display.cs" />
      <None Include="Assets\_Effects\PostProcessing\Resources\Shaders\DepthOfField.shader" />

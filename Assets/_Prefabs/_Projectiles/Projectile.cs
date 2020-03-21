@@ -2,6 +2,7 @@
 
 public class Projectile : MonoBehaviour
 {
+    public string explosionSound;
     [SerializeField] float thrust=1;
     [SerializeField] float damageMIN=1;
     [SerializeField] float damageMAX = 2 ;
@@ -23,6 +24,8 @@ public class Projectile : MonoBehaviour
     void Explode()
     {
         Instantiate(explosionEffect, transform.position, transform.rotation);
+        AudioManager _am = AudioManager.instance;
+        _am.PlaySound(explosionSound);
         RaycastHit[] hit = Physics.SphereCastAll(transform.position, explosionRadius, Vector3.up);
         DamageAllObjects(hit);
         Destroy(gameObject);

@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.UI;
 
 [RequireComponent(typeof(LineRenderer))]
@@ -9,7 +10,9 @@ public class Shooting : MonoBehaviour
 {
 
     [SerializeField] Image shootColdown = null;
+    public string shootSound;
 
+    public UnityEvent OnCannonShoot;
     public GameObject projectilePrefab;
     public GameObject cannonStartPoint;
     public float shootCooldown;
@@ -43,7 +46,7 @@ public class Shooting : MonoBehaviour
         Visualize(vo);
 
 
-        shootColdown.fillAmount =  ((nextFire - Time.time) / shootCooldown);
+        shootColdown.fillAmount = 1 - ((nextFire - Time.time) / shootCooldown);
 
         if (Input.GetKey(KeyCode.Mouse0) && (nextFire <= Time.time))
         {
@@ -56,7 +59,7 @@ public class Shooting : MonoBehaviour
     {
         var ball = Instantiate(projectilePrefab, cannonStartPoint.transform.position, cannonStartPoint.transform.rotation);
         ball.GetComponent<Rigidbody>().velocity = vo;
-        GetComponent<AudioSource>().Play();
+        OnCannonShoot.Invoke();
     }
 
     public void LookRotation(GameObject pointer, Vector3 vo)
