@@ -54,6 +54,7 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\_3dModels\Props\Rocks and Boulders 2\Shaders\RotateGameObject.cs" />
+     <Compile Include="Assets\_3dModels\Props\Tower Defence\Shooting.cs" />
      <Compile Include="Assets\_3dModels\Standard Assets\Environment\Water\Water\Scripts\Displace.cs" />
      <Compile Include="Assets\_3dModels\Standard Assets\Environment\Water\Water\Scripts\GerstnerDisplace.cs" />
      <Compile Include="Assets\_3dModels\Standard Assets\Environment\Water\Water\Scripts\MeshContainer.cs" />
@@ -154,12 +155,11 @@
      <Compile Include="Assets\_Prefabs\Explosions\RFX4_EffectSettings.cs" />
      <Compile Include="Assets\_Prefabs\Explosions\RFX4_LightCurves.cs" />
      <Compile Include="Assets\_Prefabs\Explosions\RFX4_ShaderFloatCurve.cs" />
-     <Compile Include="Assets\_Prefabs\Tower Defence\Shooting.cs" />
-     <Compile Include="Assets\_Prefabs\Wave Data\CUS_Wave_Data.cs" />
-     <Compile Include="Assets\_Prefabs\Wave Data\CUS_Wave_System\CUS_Wave_Location.cs" />
-     <Compile Include="Assets\_Prefabs\Wave Data\CUS_Wave_System\CUS_Wave_System.cs" />
      <Compile Include="Assets\_Scripts\HeadQuaters.cs" />
      <Compile Include="Assets\_Scripts\LevelManagement.cs" />
+     <Compile Include="Assets\_Scripts\Wave Data\CUS_Wave_Data.cs" />
+     <Compile Include="Assets\_Scripts\Wave Data\CUS_Wave_System\CUS_Wave_Location.cs" />
+     <Compile Include="Assets\_Scripts\Wave Data\CUS_Wave_System\CUS_Wave_System.cs" />
      <Compile Include="Assets\_UI\_DamagePopup\DamagePopup.cs" />
      <Compile Include="Assets\_UI\_Dialogs\DialogManager.cs" />
      <Compile Include="Assets\_UI\_Dialogs\DialogObject.cs" />
@@ -171,7 +171,7 @@
      <Compile Include="Assets\CastingSpells.cs" />
      <Compile Include="Assets\CUS_Health_Display.cs" />
      <None Include="Assets\_Effects\PostProcessing\Resources\Shaders\DepthOfField.shader" />
-     <None Include="Assets\_Prefabs\Tower Defence\Shaders\Double Side.shader" />
+     <None Include="Assets\_3dModels\Props\Tower Defence\Shaders\Double Side.shader" />
      <None Include="Assets\_3dModels\Props\Rocks and Boulders 2\Shaders\shader info.txt" />
      <None Include="Assets\_UI\_DamagePopup\TextMesh Pro\Resources\Shaders\TMP_SDF-Surface-Mobile.shader" />
      <None Include="Assets\_UI\_DamagePopup\TextMesh Pro\Resources\LineBreaking Leading Characters.txt" />
@@ -198,6 +198,7 @@
      <None Include="Assets\_Effects\PostProcessing\Editor Resources\Monitors\VectorscopeCompute.compute" />
      <None Include="Assets\_Effects\PostProcessing\Resources\Shaders\FXAA3.cginc" />
      <None Include="Assets\_Effects\PostProcessing\Resources\Shaders\MotionBlur.shader" />
+     <None Include="Assets\_3dModels\Props\3DForge\Blueprints\PremiumBlueprints\PB_VIK_VEK\ThunderHammerForge\Documents\Premium BLUEPRINTS Thunder Hammer Forge INFO.txt" />
      <None Include="Assets\_Effects\PostProcessing\Resources\Shaders\AmbientOcclusion.shader" />
      <None Include="Assets\_UI\FONTS\chlorinar\1001fonts-chlorinar-eula.txt" />
      <None Include="Assets\_Effects\PostProcessing\Resources\Bluenoise64\LICENSE.txt" />
@@ -213,6 +214,7 @@
      <None Include="Assets\_UI\_DamagePopup\TextMesh Pro\Sprites\EmojiOne Attribution.txt" />
      <None Include="Assets\_3dModels\Props\Mega Fantasy Props Pack\README.txt" />
      <None Include="Assets\_UI\_DamagePopup\TextMesh Pro\Resources\Shaders\TMP_SDF-Mobile Masking.shader" />
+     <None Include="Assets\_3dModels\Props\3DForge\FantasyExteriors\Village &amp; Towns\Documents\Blacksmith v1.0 - user guide.txt" />
      <None Include="Assets\_Effects\PostProcessing\Resources\Shaders\Bloom.cginc" />
      <None Include="Assets\_Effects\PostProcessing\Resources\Shaders\TAA.shader" />
      <None Include="Assets\_Effects\PostProcessing\Resources\Shaders\EyeHistogram.compute" />
