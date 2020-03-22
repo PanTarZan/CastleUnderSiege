@@ -18,6 +18,9 @@ public class CUS_Wave_System : MonoBehaviour
 
     public int waveIndex = 0;
     public bool startedSpawningWaves = false;
+    public float timeBetweenWaves = 30f;
+
+    private float nextWaveTime = 0f;
     #endregion
 
     #region MainMethods
@@ -41,7 +44,7 @@ public class CUS_Wave_System : MonoBehaviour
         {
             foreach (var enemy in waveData.enemies)
             {
-                waveData.location.SpawnMonster(enemy);
+                StartCoroutine(waveData.location.SpawnOverTime(enemy));
             }
         }
     }
@@ -56,20 +59,24 @@ public class CUS_Wave_System : MonoBehaviour
     {
         if (startedSpawningWaves)
         {
-            int enemyCount = GameObject.FindGameObjectsWithTag("Enemy").Length;
-            if (enemyCount == 0)
+            var currentEnemies = FindObjectsOfType<CUS_Enemy_AI>();
+            if (nextWaveTime < Time.time)
             {
                 if (waveIndex >= waves.Capacity)
                 {
-                    FindObjectOfType<LevelManagement>().ShowVictoryScreen();
-
+                    if (currentEnemies.Length <= 0)
+                    {
+                        FindObjectOfType<LevelManagement>().ShowVictoryScreen();
+                        return;
+                    }
                     return;
                 }
                 SpawnWave(waveIndex);
+                nextWaveTime = Time.time + timeBetweenWaves;
                 waveIndex += 1;
             }
 
-            enemy_display.GetComponent<Text>().text = enemyCount.ToString();
+            enemy_display.GetComponent<Text>().text = currentEnemies.Length.ToString();
             wave_display.GetComponent<Text>().text = waveIndex.ToString() + " / " + waves.Capacity.ToString();
         }
         else

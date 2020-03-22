@@ -23,7 +23,7 @@ public class Shooting : MonoBehaviour
     public LayerMask layer;
     public LineRenderer lineVisual;
     public int lineSegment = 10;
-    float resetTimer = 0;
+    float resetTimer;
 
 
     private Quaternion m_CharacterTargetRot;

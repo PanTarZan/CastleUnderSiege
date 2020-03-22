@@ -7,6 +7,7 @@ public class Sound{
     public string name;
     public AudioClip clip;
     public bool loop = false;
+    public bool oneShot = false;
 
     [Range(0f,1f)]
     public float volume = 0.7f;
@@ -31,8 +32,14 @@ public class Sound{
         source.volume = volume * (1 + Random.Range(-volumeRandom * 0.5f, volumeRandom * 0.5f));
         source.pitch = pitch * (1 + Random.Range(-pitchRandom * 0.5f, pitchRandom * 0.5f));
         source.loop = loop;
-        source.Play();
-
+        if (oneShot)
+        {
+            source.PlayOneShot(source.clip);
+        }
+        else
+        {
+            source.Play();
+        }
     }
     public void Stop()
     {

@@ -29,6 +29,9 @@ public class CUS_Enemy_AI : MonoBehaviour
     float m_ForwardAmount;
     Vector3 m_GroundNormal = Vector3.zero;
 
+    [Header("Audio Part")]
+    public string stepSound = "EnemySteps";
+    
 
     // Start is called before the first frame update
     void Start()
@@ -127,16 +130,25 @@ public class CUS_Enemy_AI : MonoBehaviour
 
     public void OnAnimatorMove()
     {
-        if (Time.deltaTime != 0)
+        if (m_Animator)
         {
-            Vector3 v = (m_Animator.deltaPosition) / Time.deltaTime;
-            v.y = m_Rigidbody.velocity.y;
-            m_Rigidbody.velocity = v;
+            if (Time.deltaTime != 0)
+            {
+                Vector3 v = (m_Animator.deltaPosition) / Time.deltaTime;
+                v.y = m_Rigidbody.velocity.y;
+                m_Rigidbody.velocity = v;
+            }
         }
     }
 
     public void SetTarget(Transform target)
     {
         this.target = target;
+    }
+
+    public void Step()
+    {
+        AudioManager _am = AudioManager.instance;
+        _am.PlaySound(stepSound);
     }
 }

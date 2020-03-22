@@ -1,4 +1,5 @@
 ﻿
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
@@ -28,9 +29,7 @@ public class CUS_Wave_Location : MonoBehaviour
     public void SpawnMonster(GameObject prefab)
     {
         onEnemySpawn.Invoke();
-
-        var monster = Instantiate(prefab, transform.position, Quaternion.identity);
-        SetPathForEnemy(monster);
+        StartCoroutine(SpawnOverTime(prefab));
     }
 
     private void SetPathForEnemy(GameObject monster)
@@ -39,6 +38,14 @@ public class CUS_Wave_Location : MonoBehaviour
         {
             monster.GetComponent<CUS_Enemy_AI>().routeElements.Enqueue(point);
         }
+    }
+
+    public IEnumerator SpawnOverTime(GameObject prefab)
+    {
+        var offset = Random.Range(0.1f, 0.5f);
+        yield return new WaitForSeconds(1f + offset);
+        var monster = Instantiate(prefab, transform.position, Quaternion.identity);
+        SetPathForEnemy(monster);
     }
     #endregion
 }

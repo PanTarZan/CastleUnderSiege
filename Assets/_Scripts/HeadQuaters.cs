@@ -7,7 +7,7 @@ using UnityEngine.UI;
 public class HeadQuaters : MonoBehaviour
 {
     [SerializeField] float health =100;
-    [SerializeField] float money = 0;
+    [SerializeField] float money;
     [SerializeField] public GameObject centerOfBase = null;
     [SerializeField] float checkIfEnemyRadius=1;
     public float currentHealth;
