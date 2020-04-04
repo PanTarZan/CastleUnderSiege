@@ -167,9 +167,14 @@
      <Compile Include="Assets\_UI\_UiAnimations\CUS_UI_Animations\CUS_UI_Load_Level_Screen.cs" />
      <Compile Include="Assets\_UI\_UiAnimations\CUS_UI_Animations\CUS_UI_Screen.cs" />
      <Compile Include="Assets\_UI\_UiAnimations\CUS_UI_Animations\CUS_UI_System.cs" />
+     <Compile Include="Assets\Account.cs" />
+     <Compile Include="Assets\AccountData.cs" />
      <Compile Include="Assets\AudioManager.cs" />
      <Compile Include="Assets\CastingSpells.cs" />
      <Compile Include="Assets\CUS_Health_Display.cs" />
+     <Compile Include="Assets\CUS_LevelMarker.cs" />
+     <Compile Include="Assets\CUS_LevelSelect.cs" />
+     <Compile Include="Assets\CUS_Save_system.cs" />
      <None Include="Assets\_Effects\PostProcessing\Resources\Shaders\DepthOfField.shader" />
      <None Include="Assets\_3dModels\Props\Tower Defence\Shaders\Double Side.shader" />
      <None Include="Assets\_3dModels\Props\Rocks and Boulders 2\Shaders\shader info.txt" />

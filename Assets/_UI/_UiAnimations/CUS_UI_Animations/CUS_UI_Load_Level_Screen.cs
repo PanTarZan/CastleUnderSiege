@@ -58,9 +58,21 @@ public class CUS_UI_Load_Level_Screen : CUS_UI_Screen
         }
     }
 
-    public void LoadScene(int sceneIndex)
+    public void LoadScene()
     {
-        StartCoroutine(WaitToLoadScene(sceneIndex, slider));
+        var sceneIndex = FindObjectOfType<CUS_LevelSelect>().currentScreenNumber;
+        try
+        {
+            StartCoroutine(WaitToLoadScene(sceneIndex, slider));
+        }
+        catch
+        {
+           
+        }
+        finally
+        {
+            FindObjectOfType<CUS_UI_System>().GoToPreviousScreen();
+        }
     }
     #endregion
 }
