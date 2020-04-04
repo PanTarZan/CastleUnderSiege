@@ -3,10 +3,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.UI;
 
 public class CUS_LevelSelect : MonoBehaviour
 {
     public Camera m_camera;
+    public Button levelStartButton;
+    public Account currentAccount;
+
     public Vector3 cameraOffset = new Vector3(0,3,0);
     public GameObject menuCamPos = null;
     public CUS_LevelMarker[] levelMarkers = new CUS_LevelMarker[0];
@@ -18,17 +22,30 @@ public class CUS_LevelSelect : MonoBehaviour
     void Start()
     {
         levelMarkers = GetComponentsInChildren<CUS_LevelMarker>();
+        currentAccount = FindObjectOfType<Account>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        SetCameraLocationOnPoint();
+        HandleUnlockedLevels();
+    }
+
+    private void HandleUnlockedLevels()
+    {
+        if (currentScreenNumber > currentAccount.levelsUnlocked)
+        {
+            levelStartButton.interactable = false;
+        }
+        else
+        {
+            levelStartButton.interactable = true;
+        }
     }
 
     public void SwitchToNextLevel()
     {
-        //TODO and so on :)
         currentScreenNumber += 1;
         if (currentScreenNumber > levelMarkers.Length)
         {
@@ -38,7 +55,6 @@ public class CUS_LevelSelect : MonoBehaviour
     }
     public void SwitchToPrevLevel()
     {
-        //TODO and so on :)
         currentScreenNumber -= 1;
         if (currentScreenNumber < 1)
         {
@@ -48,15 +64,21 @@ public class CUS_LevelSelect : MonoBehaviour
     }
     public void SwitchToMenu()
     {
-        //TODO and so on :)
         currentScreenNumber = 0;
         onLevelSwitch.Invoke();
     }
 
     public void SetCameraLocationOnPoint()
     {
-        m_camera.transform.position = CurrentScreenPosition().position + cameraOffset;
-        m_camera.transform.LookAt(CurrentScreenPosition());
+        m_camera.transform.position = Vector3.Lerp(m_camera.transform.position,CurrentScreenPosition().position + cameraOffset, Time.deltaTime);
+        if (currentScreenNumber == 0)
+        {
+            m_camera.transform.LookAt(levelMarkers[7].transform);
+        }
+        else
+        {
+            m_camera.transform.LookAt(CurrentScreenPosition());
+        }
     }
 
     private Transform CurrentScreenPosition()

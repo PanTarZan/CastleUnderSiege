@@ -35,7 +35,7 @@ public class CUS_UI_System : MonoBehaviour
     {
         screens = GetComponentsInChildren<CUS_UI_Screen>(true);
         InitializeScreens();
-
+        Time.timeScale = 1;
 
         if (m_StartScreen)
         {

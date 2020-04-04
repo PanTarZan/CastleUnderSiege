@@ -45,6 +45,7 @@ public class CUS_UI_Load_Level_Screen : CUS_UI_Screen
 
     public IEnumerator WaitToLoadScene(int sceneIndex, Slider slider)
     {
+        Debug.Log("Loading");
         AsyncOperation operation = SceneManager.LoadSceneAsync(sceneIndex);
         while (!operation.isDone)
         {
@@ -58,7 +59,7 @@ public class CUS_UI_Load_Level_Screen : CUS_UI_Screen
         }
     }
 
-    public void LoadScene()
+    public void LoadSceneFromMenu()
     {
         var sceneIndex = FindObjectOfType<CUS_LevelSelect>().currentScreenNumber;
         try
@@ -73,6 +74,16 @@ public class CUS_UI_Load_Level_Screen : CUS_UI_Screen
         {
             FindObjectOfType<CUS_UI_System>().GoToPreviousScreen();
         }
+    }
+
+    public void LoadNextScene()
+    {
+        int sceneIndex = SceneManager.GetActiveScene().buildIndex + 1;
+        StartCoroutine(WaitToLoadScene(sceneIndex, slider));
+    }
+    public void LoadMainMenu()
+    {
+        StartCoroutine(WaitToLoadScene(0, slider));
     }
     #endregion
 }
