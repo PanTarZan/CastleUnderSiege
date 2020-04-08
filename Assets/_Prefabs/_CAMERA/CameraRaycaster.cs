@@ -10,11 +10,15 @@ public class CameraRaycaster : MonoBehaviour
     Vector3 m_PointerLocation;
     public MouseLook mouseLook = new MouseLook();
 
+    void Awake()
+    {
+        Pointer = Instantiate(PointerPrefab);
+    }
     void Start()
     {
         m_Camera = GetComponentInChildren<Camera>();
         mouseLook.Init(transform, m_Camera.transform);
-        Pointer = Instantiate(PointerPrefab);
+        
     }
 
     void Update()

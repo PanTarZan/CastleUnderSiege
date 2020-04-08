@@ -52,7 +52,6 @@ public class RFX4_ShaderFloatCurve : MonoBehaviour {
         }
         if (time >= GraphTimeMultiplier)
         {
-            Destroy(transform.parent.gameObject);
             if (IsLoop) startTime = Time.time;
             else canUpdate = false;
         }

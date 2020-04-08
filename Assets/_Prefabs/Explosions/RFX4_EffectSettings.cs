@@ -151,7 +151,6 @@ public class RFX4_EffectSettings : MonoBehaviour
 
     IEnumerator Fadeout()
     {
-        Debug.Log("Fadeout");
         currentFadeoutTime = Time.time;
         while ((Time.time - currentFadeoutTime) < FadeoutTime)
         {

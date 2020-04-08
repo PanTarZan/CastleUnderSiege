@@ -72,6 +72,12 @@ public class CUS_UI_System : MonoBehaviour
     {
         if (aScreen)
         {
+            if (currentScreen == aScreen)
+            {
+                Debug.Log("lol you wont break this game lol xD");
+                return;
+            }
+
             if (CurrentScreen)
             {
                 currentScreen.CloseScreen();

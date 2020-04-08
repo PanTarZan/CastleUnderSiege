@@ -62,27 +62,27 @@ public class CUS_UI_Load_Level_Screen : CUS_UI_Screen
     public void LoadSceneFromMenu()
     {
         var sceneIndex = FindObjectOfType<CUS_LevelSelect>().currentScreenNumber;
-        try
-        {
-            StartCoroutine(WaitToLoadScene(sceneIndex, slider));
-        }
-        catch
-        {
-           
-        }
-        finally
-        {
-            FindObjectOfType<CUS_UI_System>().GoToPreviousScreen();
-        }
+        Debug.Log("loading scene: "+ sceneIndex);
+        StartCoroutine(WaitToLoadScene(sceneIndex, slider));
     }
 
     public void LoadNextScene()
     {
         int sceneIndex = SceneManager.GetActiveScene().buildIndex + 1;
-        StartCoroutine(WaitToLoadScene(sceneIndex, slider));
+        if (sceneIndex >= SceneManager.sceneCountInBuildSettings)
+        {
+            Debug.Log("loading scene: " + 0);
+            StartCoroutine(WaitToLoadScene(0, slider));
+        }
+        else
+        {
+            Debug.Log("loading scene: " + sceneIndex);
+            StartCoroutine(WaitToLoadScene(sceneIndex, slider));
+        }
     }
     public void LoadMainMenu()
     {
+        Debug.Log("loading Main Menu");
         StartCoroutine(WaitToLoadScene(0, slider));
     }
     #endregion

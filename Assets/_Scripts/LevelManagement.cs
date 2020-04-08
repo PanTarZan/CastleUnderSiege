@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.UI;
 
 public class LevelManagement : MonoBehaviour
@@ -14,6 +15,8 @@ public class LevelManagement : MonoBehaviour
     public CUS_UI_Screen GameOverScreen;
     public CUS_UI_Screen PausedScreen;
     public CUS_UI_Screen gameUI;
+    public UnityEvent onVictory;
+    public UnityEvent onGameOver;
 
 
     public bool isGamePaused = false;
@@ -61,6 +64,14 @@ public class LevelManagement : MonoBehaviour
             isGamePaused = true;
             hasGameEnded = true;
             FindObjectOfType<CUS_UI_System>().SwitchScreens(VictoryScreen);
+            onVictory.Invoke();
+            if (FindObjectOfType<Account>())
+            {
+                Debug.Log("Account Found");
+                var acc = FindObjectOfType<Account>();
+                acc.levelsUnlocked += 1;
+                CUS_Save_system.SaveAccountData(acc);
+            }
         }
     }
 
@@ -71,7 +82,7 @@ public class LevelManagement : MonoBehaviour
             hasGameEnded = true;
             isGamePaused = true;
             FindObjectOfType<CUS_UI_System>().SwitchScreens(GameOverScreen);
-
+            onGameOver.Invoke();
         }
     }
 

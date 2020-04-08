@@ -24,6 +24,7 @@ public class Shooting : MonoBehaviour
     public LineRenderer lineVisual;
     public int lineSegment = 10;
     float resetTimer;
+    GameObject pointer;
 
 
     private Quaternion m_CharacterTargetRot;
@@ -34,12 +35,13 @@ public class Shooting : MonoBehaviour
     {
         lineVisual = GetComponent<LineRenderer>();
         lineVisual.positionCount = lineSegment;
+        pointer = FindObjectOfType<Pointer>().gameObject;
     }
 
     // Update is called once per frame
     void Update()
     {
-        GameObject pointer = FindObjectOfType<Pointer>().gameObject;
+        
         Vector3 vo = CalculateVelocty(pointer.transform.position, cannonStartPoint.transform.position, 1f);
 
         LookRotation(pointer,vo);
