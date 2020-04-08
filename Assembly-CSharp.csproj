@@ -123,6 +123,7 @@
      <Compile Include="Assets\_Scripts\AccountData.cs" />
      <Compile Include="Assets\_Scripts\AudioManager.cs" />
      <Compile Include="Assets\_Scripts\CastingSpells.cs" />
+     <Compile Include="Assets\_Scripts\CurrentPlayerAccount.cs" />
      <Compile Include="Assets\_Scripts\CUS_Health_Display.cs" />
      <Compile Include="Assets\_Scripts\CUS_LevelMarker.cs" />
      <Compile Include="Assets\_Scripts\CUS_LevelSelect.cs" />
@@ -139,6 +140,7 @@
      <Compile Include="Assets\_UI\_UiAnimations\CUS_UI_Animations\CUS_UI_Load_Level_Screen.cs" />
      <Compile Include="Assets\_UI\_UiAnimations\CUS_UI_Animations\CUS_UI_Screen.cs" />
      <Compile Include="Assets\_UI\_UiAnimations\CUS_UI_Animations\CUS_UI_System.cs" />
+     <Compile Include="Assets\CUS_Save_Displayer.cs" />
      <Compile Include="Assets\KriptoFX\Realistic Effects Pack v4\Effects\Scripts\Curves\RFX4_PhysicsForceCurves.cs" />
      <Compile Include="Assets\KriptoFX\Realistic Effects Pack v4\Effects\Scripts\Curves\RFX4_ScaleCurves.cs" />
      <Compile Include="Assets\KriptoFX\Realistic Effects Pack v4\Effects\Scripts\Curves\RFX4_ShaderColorGradient.cs" />

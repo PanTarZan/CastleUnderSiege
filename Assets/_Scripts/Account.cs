@@ -10,34 +10,18 @@ public class Account : MonoBehaviour
     public int enemiesKilled;
     public int gold;
 
-    void Awake()
+    public void LoadGame(string path)
     {
-        GameObject[] objs = GameObject.FindGameObjectsWithTag("SaveSystem");
-
-        if (objs.Length > 1)
-        {
-            Destroy(gameObject);
-        }
-        DontDestroyOnLoad(gameObject);
-    }
-
-    public void SaveGame()
-    {
-        CUS_Save_system.SaveAccountData(this);
-    }
-
-    public void CreateCleanSaveFile()
-    {
-        CUS_Save_system.SaveAccountData(null);
-    }
-
-    public void LoadGame()
-    {
-        AccountData data = CUS_Save_system.LoadAccountData();
+        AccountData data = CUS_Save_system.LoadAccountData(path);
         AccountName = data.name;
         timeSpent = data.timeSpent;
         levelsUnlocked = data.levelsUnlocked;
         enemiesKilled = data.enemiesKilled;
         gold = data.gold;
+    }
+    public Account(string _name)
+    {
+        AccountName = _name;
+        levelsUnlocked = 1;
     }
 }
