@@ -12,7 +12,7 @@ public class CameraRaycaster : MonoBehaviour
 
     void Awake()
     {
-        Pointer = Instantiate(PointerPrefab);
+        Pointer = Instantiate(PointerPrefab, new Vector3(0,0,0), Quaternion.identity);
     }
     void Start()
     {

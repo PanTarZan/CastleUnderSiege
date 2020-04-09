@@ -7,9 +7,17 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 0}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 119242, guid: 4bc451a9c5656db4794e16cdecbabbac, type: 3}
       propertyPath: m_Name
-      value: Effect23
+      value: Effect23 Variant
+      objectReference: {fileID: 0}
+    - target: {fileID: 119242, guid: 4bc451a9c5656db4794e16cdecbabbac, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 459914, guid: 4bc451a9c5656db4794e16cdecbabbac, type: 3}
       propertyPath: m_LocalPosition.x
@@ -58,7 +66,83 @@ PrefabInstance:
     - target: {fileID: 114898057786261324, guid: 4bc451a9c5656db4794e16cdecbabbac,
         type: 3}
       propertyPath: Speed
-      value: 100
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 114898057786261324, guid: 4bc451a9c5656db4794e16cdecbabbac,
+        type: 3}
+      propertyPath: ParticlesBudget
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114898057786261324, guid: 4bc451a9c5656db4794e16cdecbabbac,
+        type: 3}
+      propertyPath: UseCollisionDetection
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114898057786261324, guid: 4bc451a9c5656db4794e16cdecbabbac,
+        type: 3}
+      propertyPath: Mass
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114898057786261324, guid: 4bc451a9c5656db4794e16cdecbabbac,
+        type: 3}
+      propertyPath: AirDrag
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114898057786261324, guid: 4bc451a9c5656db4794e16cdecbabbac,
+        type: 3}
+      propertyPath: UseGravity
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114898057786261324, guid: 4bc451a9c5656db4794e16cdecbabbac,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 456982, guid: 4bc451a9c5656db4794e16cdecbabbac, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.965
+      objectReference: {fileID: 0}
+    - target: {fileID: 408440, guid: 4bc451a9c5656db4794e16cdecbabbac, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.56
+      objectReference: {fileID: 0}
+    - target: {fileID: 467534, guid: 4bc451a9c5656db4794e16cdecbabbac, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.733
+      objectReference: {fileID: 0}
+    - target: {fileID: 198306, guid: 4bc451a9c5656db4794e16cdecbabbac, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114153433710859902, guid: 4bc451a9c5656db4794e16cdecbabbac,
+        type: 3}
+      propertyPath: ColliderRadius
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114153433710859902, guid: 4bc451a9c5656db4794e16cdecbabbac,
+        type: 3}
+      propertyPath: UseCollisionDetect
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 19856816, guid: 4bc451a9c5656db4794e16cdecbabbac, type: 3}
+      propertyPath: InitialModule.startSize.scalar
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 19919650, guid: 4bc451a9c5656db4794e16cdecbabbac, type: 3}
+      propertyPath: m_Flip.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 19872866, guid: 4bc451a9c5656db4794e16cdecbabbac, type: 3}
+      propertyPath: InitialModule.startSize.minScalar
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 19872866, guid: 4bc451a9c5656db4794e16cdecbabbac, type: 3}
+      propertyPath: InitialModule.startSize.scalar
+      value: 0.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 19877426, guid: 4bc451a9c5656db4794e16cdecbabbac, type: 3}
+      propertyPath: UVModule.flipV
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4bc451a9c5656db4794e16cdecbabbac, type: 3}

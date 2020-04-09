@@ -37,12 +37,11 @@ public class CastingSpells : MonoBehaviour
             if (currentSpellCost <= currentMana)
             {
                 Instantiate(CurrentMagicSpellPrefab, pointer.transform.position+SpellSpawnOffset, Quaternion.Euler(90,0,0));
-                Debug.Log("Bum");
                 currentMana -= currentSpellCost;
             }
             else
             {
-                Debug.Log("Not Enough Mana");
+               // Debug.Log("Not Enough Mana");
             }
         }
         

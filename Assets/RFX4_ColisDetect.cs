@@ -15,8 +15,5 @@ public class RFX4_ColisDetect : MonoBehaviour
 
     private void CollisionEnter(object sender, RFX4_PhysicsMotion.RFX4_CollisionInfo e)
     {
-        Debug.Log(e.HitPoint); //a collision coordinates in world space
-        Debug.Log(e.HitGameObject.name); //a collided gameobject
-        Debug.Log(e.HitCollider.name); //a collided collider :)
     }
 }

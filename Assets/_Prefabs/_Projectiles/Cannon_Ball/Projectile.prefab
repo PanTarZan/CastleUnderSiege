@@ -127,7 +127,9 @@ MonoBehaviour:
   damageMIN: 19
   damageMAX: 23
   explosionRadius: 2
-  explosionEffect: {fileID: 132858, guid: dcbbdee2152660b41822b2eb0ccb8767, type: 3}
+  explosionEffect: {fileID: 6826212522944454144, guid: 4ce238fe9f565b646be999313f1945d2,
+    type: 3}
+  destroyOnImpact: 1
 --- !u!96 &4695158230976176963
 TrailRenderer:
   serializedVersion: 2
