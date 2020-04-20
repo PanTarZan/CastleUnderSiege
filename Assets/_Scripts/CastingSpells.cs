@@ -17,8 +17,9 @@ public class CastingSpells : MonoBehaviour
     public Vector3 SpellSpawnOffset;
 
     public float currentSpellCost = 40;
-    [SerializeField] Image mana_display = null;
+    [SerializeField] Image mana_display_bar = null;
     [SerializeField] GameObject CurrentMagicSpellPrefab;
+     public Text mana_display_value;
 
     // Start is called before the first frame update
     void Start()
@@ -63,7 +64,8 @@ public class CastingSpells : MonoBehaviour
                 currentMana += manaRate;
             }
         }
-        mana_display.fillAmount = currentMana / maxMana;
+        mana_display_bar.fillAmount = currentMana / maxMana;
+        mana_display_value.text = currentMana.ToString(); ;
     }
 
     public void StartGeneratingMana()

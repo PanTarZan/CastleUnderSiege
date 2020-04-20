@@ -16,6 +16,7 @@ public class CurrentPlayerAccount : Account
         {
             Destroy(gameObject);
         }
+
         DontDestroyOnLoad(gameObject);
     }
 

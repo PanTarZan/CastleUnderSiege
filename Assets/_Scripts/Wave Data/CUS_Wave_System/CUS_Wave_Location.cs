@@ -12,6 +12,7 @@ public class CUS_Wave_Location : MonoBehaviour
     [Header("System Events")]
     public UnityEvent onEnemySpawn = new UnityEvent();
     public List<GameObject> enemyPath = new List<GameObject>();
+    public float timeOffset = 0;
 
     
     #endregion
@@ -25,12 +26,7 @@ public class CUS_Wave_Location : MonoBehaviour
     #endregion
 
     #region HelperMethods
-
-    public void SpawnMonster(GameObject prefab)
-    {
-        onEnemySpawn.Invoke();
-        StartCoroutine(SpawnOverTime(prefab));
-    }
+    
 
     private void SetPathForEnemy(GameObject monster)
     {
@@ -42,10 +38,16 @@ public class CUS_Wave_Location : MonoBehaviour
 
     public IEnumerator SpawnOverTime(GameObject prefab)
     {
-        var offset = Random.Range(0.1f, 0.5f);
-        yield return new WaitForSeconds(1f + offset);
+        timeOffset += 1;
+        yield return new WaitForSeconds(timeOffset);
+        
         var monster = Instantiate(prefab, transform.position, Quaternion.identity);
         SetPathForEnemy(monster);
+    }
+
+    public void resetOffset()
+    {
+        timeOffset = 0;
     }
     #endregion
 }

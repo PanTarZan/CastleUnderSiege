@@ -47,8 +47,8 @@ public class Shooting : MonoBehaviour
         LookRotation(pointer,vo);
         Visualize(vo);
 
-
-        shootColdown.fillAmount = 1 - ((nextFire - Time.time) / shootCooldown);
+        if (shootColdown)
+            shootColdown.fillAmount = 1 - ((nextFire - Time.time) / shootCooldown);
 
         if (Input.GetKey(KeyCode.Mouse0) && (nextFire <= Time.time))
         {

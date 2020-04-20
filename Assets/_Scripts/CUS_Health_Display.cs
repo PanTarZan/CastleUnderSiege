@@ -16,7 +16,6 @@ public class CUS_Health_Display : MonoBehaviour
 
     public void DisplayHealth(float percentage)
     {
-        currentScale = percentage;
-        currentHealthImage.rectTransform.localScale = new Vector3(currentScale, 1, 1);
+        currentHealthImage.fillAmount = percentage;
     }
 }

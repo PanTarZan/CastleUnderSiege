@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class LevelManagement : MonoBehaviour
 {
@@ -17,6 +18,7 @@ public class LevelManagement : MonoBehaviour
     public CUS_UI_Screen gameUI;
     public UnityEvent onVictory;
     public UnityEvent onGameOver;
+    public int levelUnlockedIndex = 0;
 
 
     public bool isGamePaused = false;
@@ -68,9 +70,12 @@ public class LevelManagement : MonoBehaviour
             if (FindObjectOfType<Account>())
             {
                 Debug.Log("Account Found");
-                var acc = FindObjectOfType<Account>();
-                acc.levelsUnlocked += 1;
-                //CUS_Save_system.SaveAccountData(acc);
+                var acc = FindObjectOfType<CurrentPlayerAccount>();
+                if (acc.levelsUnlocked <= levelUnlockedIndex)
+                {
+                    acc.levelsUnlocked = levelUnlockedIndex;
+                    CUS_Save_system.SaveAccountData(acc, Application.persistentDataPath+"/"+acc.AccountName+".kappa");
+                }
             }
         }
     }
@@ -102,6 +107,7 @@ public class LevelManagement : MonoBehaviour
 
     public void TurnOnGameOver()
     {
+        Debug.Log("level manager game over");
         ShowGameOverScreen();
     }
 }

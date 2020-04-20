@@ -6,7 +6,7 @@ using UnityEngine.UI;
 
 public class HeadQuaters : MonoBehaviour
 {
-    [SerializeField] float health =100;
+    [SerializeField] float max_health =100;
     [SerializeField] float money;
     [SerializeField] public GameObject centerOfBase = null;
     [SerializeField] float checkIfEnemyRadius=1;
@@ -14,13 +14,14 @@ public class HeadQuaters : MonoBehaviour
     public float currentMoney;
 
 
-    [SerializeField] GameObject health_display = null;
+    [SerializeField] GameObject health_display_bar = null;
+    [SerializeField] GameObject health_display_value = null;
     [SerializeField] GameObject money_display = null;
 
     // Start is called before the first frame update
     void Start()
     {
-        currentHealth = health;
+        currentHealth = max_health;
     }
 
     // Update is called once per frame
@@ -29,15 +30,21 @@ public class HeadQuaters : MonoBehaviour
 
 
         checkIfEnemiesAreInBase(checkIfEnemyRadius);
-        health_display.GetComponent<Text>().text = currentHealth.ToString();
-        money_display.GetComponent<Text>().text = currentMoney.ToString();
+        DisplayHealth();
+        if (money_display)
+            money_display.GetComponent<Text>().text = currentMoney.ToString();
         if (currentHealth <= 0)
         {
             FindObjectOfType<LevelManagement>().TurnOnGameOver();
         }
-        
+
     }
-    
+
+    private void DisplayHealth()
+    {
+        health_display_value.GetComponent<Text>().text = currentHealth.ToString();
+        health_display_bar.GetComponent<Image>().fillAmount = currentHealth / max_health;
+    }
 
     private void checkIfEnemiesAreInBase(float radius)
     {

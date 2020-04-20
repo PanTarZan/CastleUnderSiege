@@ -50,7 +50,6 @@ public class CUS_UI_Load_Level_Screen : CUS_UI_Screen
         while (!operation.isDone)
         {
             float progress = Mathf.Clamp01(operation.progress / 0.9f);
-            Debug.Log(progress);
             if (slider)
             {
                 slider.value = progress;

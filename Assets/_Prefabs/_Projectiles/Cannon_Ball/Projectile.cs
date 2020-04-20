@@ -42,7 +42,6 @@ public class Projectile : MonoBehaviour
     {
         foreach (var h in hit)
         {
-            Debug.Log(h);
             if (h.transform.GetComponent<CUS_Enemy_AI>())
             {
                 float damage = Random.Range(damageMIN, damageMAX);

@@ -40,6 +40,7 @@ public class CUS_Save_Displayer : MonoBehaviour
 
     private void GetSaveFileNames()
     {
+        Debug.Log("populating saves: " + Time.time);
         string path = Application.persistentDataPath;
         var files = Directory.GetFiles(path);
 
@@ -47,7 +48,6 @@ public class CUS_Save_Displayer : MonoBehaviour
         {
             if (file.EndsWith(".kappa"))
             {
-
                 saveFilesPath.Add(file);
             }
         }
@@ -87,18 +87,11 @@ public class CUS_Save_Displayer : MonoBehaviour
             kills.transform.SetParent(button.transform);
             var kills_txt = kills.GetComponent<Text>();
             kills_txt.text = "kills: " + acc.enemiesKilled.ToString();
-
-            GameObject gold = Instantiate(textPrefab);
-            gold.transform.SetParent(button.transform);
-            var gold_txt = gold.GetComponent<Text>();
-            gold_txt.text = "gold: " + acc.gold.ToString();
         }
     }
 
     public void ClickWithLoadGame(Account account)
     {
-
-        
         var playerAccount = FindObjectOfType<CurrentPlayerAccount>();
 
         playerAccount.AccountName = account.AccountName;

@@ -15,6 +15,7 @@ public class CUS_Wave_System : MonoBehaviour
     [Header("UI")]
     [SerializeField] GameObject enemy_display = null;
     [SerializeField] GameObject wave_display = null;
+    [SerializeField] Image wave_timer = null;
 
     public int waveIndex = 0;
     public bool startedSpawningWaves = false;
@@ -49,6 +50,15 @@ public class CUS_Wave_System : MonoBehaviour
         }
     }
 
+    public void ResetSpawnOffset(int waveIndex)
+    {
+        onWaveSpawned.Invoke();
+        foreach (var waveData in waves[waveIndex].waveData)
+        {
+            waveData.location.resetOffset();
+        }
+    }
+
     public void SetSpawningWaves(bool value)
     {
         startedSpawningWaves = value;
@@ -60,6 +70,10 @@ public class CUS_Wave_System : MonoBehaviour
         if (startedSpawningWaves)
         {
             var currentEnemies = FindObjectsOfType<CUS_Enemy_AI>();
+            enemy_display.GetComponent<Text>().text = currentEnemies.Length.ToString();
+            wave_display.GetComponent<Text>().text = waveIndex.ToString() + " / " + waves.Capacity.ToString();
+            wave_timer.fillAmount = (nextWaveTime - Time.time) / timeBetweenWaves;
+
             if (nextWaveTime < Time.time)
             {
                 if (waveIndex >= waves.Capacity)
@@ -72,12 +86,11 @@ public class CUS_Wave_System : MonoBehaviour
                     return;
                 }
                 SpawnWave(waveIndex);
+                ResetSpawnOffset(waveIndex);
                 nextWaveTime = Time.time + timeBetweenWaves;
                 waveIndex += 1;
             }
 
-            enemy_display.GetComponent<Text>().text = currentEnemies.Length.ToString();
-            wave_display.GetComponent<Text>().text = waveIndex.ToString() + " / " + waves.Capacity.ToString();
         }
         else
         {
