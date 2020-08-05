@@ -70,15 +70,17 @@ public class CUS_LevelSelect : MonoBehaviour
 
     public void SetCameraLocationOnPoint()
     {
-        m_camera.transform.position = Vector3.Lerp(m_camera.transform.position,CurrentScreenPosition().position + cameraOffset, Time.deltaTime);
-        if (currentScreenNumber == 0)
+        m_camera.transform.position = Vector3.Lerp(m_camera.transform.position, CurrentScreenPosition().position, Time.deltaTime);
+        m_camera.transform.rotation = Quaternion.Lerp(m_camera.transform.rotation, CurrentScreenPosition().rotation, Time.deltaTime);
+
+        /*if (currentScreenNumber == 0)
         {
             m_camera.transform.LookAt(levelMarkers[7].transform);
         }
         else
         {
             m_camera.transform.LookAt(CurrentScreenPosition());
-        }
+        } */
     }
 
     private Transform CurrentScreenPosition()

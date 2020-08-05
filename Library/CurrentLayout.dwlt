@@ -325,10 +325,10 @@ MonoBehaviour:
     m_VAllowExceedBaseRangeMin: 1
     m_VAllowExceedBaseRangeMax: 1
     m_ScaleWithWindow: 0
-    m_HSlider: 1
+    m_HSlider: 0
     m_VSlider: 0
     m_IgnoreScrollWheelUntilClicked: 0
-    m_EnableMouseInput: 1
+    m_EnableMouseInput: 0
     m_EnableSliderZoomHorizontal: 0
     m_EnableSliderZoomVertical: 0
     m_UniformScale: 1
@@ -389,9 +389,9 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: 164c0000
-      m_LastClickedID: 19478
-      m_ExpandedIDs: defbffff
+      m_SelectedIDs: 52820000
+      m_LastClickedID: 33362
+      m_ExpandedIDs: f0abffff3ad0ffffd2d0ffff02d1ffff2ed1ffff70d1ffff7ad1ffffa2d1ffffe2d1fffffad1ffff04defffff4ffffffca820000
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -447,9 +447,9 @@ MonoBehaviour:
   m_isRotationLocked: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: 218.55037, y: 31.238754, z: 107.72717}
+    m_Target: {x: 139.4395, y: 33.35332, z: 289.95074}
     speed: 2
-    m_Value: {x: 218.55037, y: 31.238754, z: 107.72717}
+    m_Value: {x: 139.4395, y: 33.35332, z: 289.95074}
   m_RenderMode: 31
   m_CameraMode:
     drawMode: 31
@@ -477,13 +477,13 @@ MonoBehaviour:
       speed: 2
       m_Value: 0
   m_Rotation:
-    m_Target: {x: 0.3619603, y: -0.2903992, z: 0.11976256, w: 0.8776731}
+    m_Target: {x: 0.10999932, y: 0.7790284, z: -0.14269282, w: 0.60054445}
     speed: 2
-    m_Value: {x: 0.3619603, y: -0.2903992, z: 0.11976256, w: 0.8776731}
+    m_Value: {x: 0.10999932, y: 0.7790284, z: -0.14269282, w: 0.60054445}
   m_Size:
-    m_Target: 13.332364
+    m_Target: 22
     speed: 2
-    m_Value: 13.332364
+    m_Value: 22
   m_Ortho:
     m_Target: 0
     speed: 2
@@ -757,7 +757,7 @@ MonoBehaviour:
   m_LockTracker:
     m_IsLocked: 0
   m_PreviewResizer:
-    m_CachedPref: 322
+    m_CachedPref: 100
     m_ControlHash: -371814159
     m_PrefName: Preview_InspectorPreview
   m_PreviewWindow: {fileID: 0}
@@ -1290,20 +1290,20 @@ MonoBehaviour:
     m_ShowAllHits: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Fantasy Forest Environment/Summer/Meshes/Prefabs
+    - Assets/_Prefabs
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets/Fantasy Forest Environment/Summer/Meshes/Prefabs
+  - Assets/_Prefabs
   m_LastFoldersGridSize: -1
   m_LastProjectPath: C:\UnityProjects\CastleUnderSiege
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
-    scrollPos: {x: 0, y: 551}
-    m_SelectedIDs: 9e160000
-    m_LastClickedID: 5790
-    m_ExpandedIDs: 00000000b0130000d61500009e160000a81b00004c1c0000be1c0000321f0000802400004025000076290000ec2a0000822b000038330000ea380000e23a0000603c0000c8440000be450000846d0000
+    scrollPos: {x: 0, y: 131}
+    m_SelectedIDs: 88690000
+    m_LastClickedID: 27016
+    m_ExpandedIDs: 000000009e4c0000ae4e0000704f000058540000ec540000b6570000d65c0000945d0000b861000022630000b8630000486b0000c87000009e72000014740000767c0000667d00001888000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -1331,7 +1331,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 00000000b0130000d61500009e160000a81b00004c1c0000be1c0000321f0000802400004025000076290000ec2a0000822b000038330000ea380000e23a0000603c0000c8440000be450000846d0000
+    m_ExpandedIDs: 000000009e4c0000ae4e0000704f000058540000ec5400005a550000b6570000d65c0000945d0000b861000022630000b8630000486b0000c87000009e72000014740000767c0000667d000018880000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -1356,9 +1356,9 @@ MonoBehaviour:
       m_Icon: {fileID: 0}
       m_ResourceFile: 
   m_ListAreaState:
-    m_SelectedInstanceIDs: 
-    m_LastClickedInstanceID: 0
-    m_HadKeyboardFocusLastEvent: 0
+    m_SelectedInstanceIDs: 50d1ffff
+    m_LastClickedInstanceID: -11952
+    m_HadKeyboardFocusLastEvent: 1
     m_ExpandedInstanceIDs: 9e570000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
@@ -1383,7 +1383,7 @@ MonoBehaviour:
       m_Icon: {fileID: 0}
       m_ResourceFile: 
     m_NewAssetIndexInList: -1
-    m_ScrollPosition: {x: 0, y: 112}
+    m_ScrollPosition: {x: 0, y: 0}
     m_GridSize: 64
   m_DirectoriesAreaWidth: 325
 --- !u!114 &25
