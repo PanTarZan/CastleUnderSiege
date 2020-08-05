@@ -62,6 +62,28 @@
   <ItemGroup>
     <Compile Include="Assets\_3dModels\Props\Rocks and Boulders 2\Shaders\RotateGameObject.cs" />
     <Compile Include="Assets\_3dModels\Props\Tower Defence\Shooting.cs" />
+    <Compile Include="Assets\_3dModels\Standard Assets\Cameras\Scripts\AbstractTargetFollower.cs" />
+    <Compile Include="Assets\_3dModels\Standard Assets\Cameras\Scripts\AutoCam.cs" />
+    <Compile Include="Assets\_3dModels\Standard Assets\Cameras\Scripts\FreeLookCam.cs" />
+    <Compile Include="Assets\_3dModels\Standard Assets\Cameras\Scripts\HandHeldCam.cs" />
+    <Compile Include="Assets\_3dModels\Standard Assets\Cameras\Scripts\LookatTarget.cs" />
+    <Compile Include="Assets\_3dModels\Standard Assets\Cameras\Scripts\PivotBasedCameraRig.cs" />
+    <Compile Include="Assets\_3dModels\Standard Assets\Cameras\Scripts\ProtectCameraFromWallClip.cs" />
+    <Compile Include="Assets\_3dModels\Standard Assets\Cameras\Scripts\TargetFieldOfView.cs" />
+    <Compile Include="Assets\_3dModels\Standard Assets\Characters\ThirdPersonCharacter\Scripts\AICharacterControl.cs" />
+    <Compile Include="Assets\_3dModels\Standard Assets\Characters\ThirdPersonCharacter\Scripts\ThirdPersonCharacter.cs" />
+    <Compile Include="Assets\_3dModels\Standard Assets\Characters\ThirdPersonCharacter\Scripts\ThirdPersonUserControl.cs" />
+    <Compile Include="Assets\_3dModels\Standard Assets\CrossPlatformInput\Scripts\AxisTouchButton.cs" />
+    <Compile Include="Assets\_3dModels\Standard Assets\CrossPlatformInput\Scripts\ButtonHandler.cs" />
+    <Compile Include="Assets\_3dModels\Standard Assets\CrossPlatformInput\Scripts\CrossPlatformInputManager.cs" />
+    <Compile Include="Assets\_3dModels\Standard Assets\CrossPlatformInput\Scripts\InputAxisScrollbar.cs" />
+    <Compile Include="Assets\_3dModels\Standard Assets\CrossPlatformInput\Scripts\Joystick.cs" />
+    <Compile Include="Assets\_3dModels\Standard Assets\CrossPlatformInput\Scripts\MobileControlRig.cs" />
+    <Compile Include="Assets\_3dModels\Standard Assets\CrossPlatformInput\Scripts\PlatformSpecific\MobileInput.cs" />
+    <Compile Include="Assets\_3dModels\Standard Assets\CrossPlatformInput\Scripts\PlatformSpecific\StandaloneInput.cs" />
+    <Compile Include="Assets\_3dModels\Standard Assets\CrossPlatformInput\Scripts\TiltInput.cs" />
+    <Compile Include="Assets\_3dModels\Standard Assets\CrossPlatformInput\Scripts\TouchPad.cs" />
+    <Compile Include="Assets\_3dModels\Standard Assets\CrossPlatformInput\Scripts\VirtualInput.cs" />
     <Compile Include="Assets\_3dModels\Standard Assets\Environment\Water\Water\Scripts\Displace.cs" />
     <Compile Include="Assets\_3dModels\Standard Assets\Environment\Water\Water\Scripts\GerstnerDisplace.cs" />
     <Compile Include="Assets\_3dModels\Standard Assets\Environment\Water\Water\Scripts\MeshContainer.cs" />
@@ -284,6 +306,8 @@
     <Compile Include="Assets\KriptoFX\Realistic Effects Pack v4\SceneResources\Other\RFX4_RealtimeReflection.cs" />
     <Compile Include="Assets\RFX4_ColisDetect.cs" />
     <None Include="Assets\_Effects\PostProcessing\Resources\Shaders\DepthOfField.shader" />
+    <None Include="Assets\_3dModels\Standard Assets\Effects\GlassRefraction\Shaders\GlassStainedBumpDistort.shader" />
+    <None Include="Assets\_3dModels\Standard Assets\Effects\ToonShading\Shaders\ToonBasic.shader" />
     <None Include="Assets\_3dModels\Props\Tower Defence\Shaders\Double Side.shader" />
     <None Include="Assets\_3dModels\Props\Rocks and Boulders 2\Shaders\shader info.txt" />
     <None Include="Assets\_UI\_DamagePopup\TextMesh Pro\Resources\Shaders\TMP_SDF-Surface-Mobile.shader" />
@@ -299,6 +323,8 @@
     <None Include="Assets\KriptoFX\Realistic Effects Pack v4\Effects\Shaders\RFX4_DepthMask.shader" />
     <None Include="Assets\KriptoFX\Realistic Effects Pack v4\ImagePostEffects\Mobile\Resources\RFX4_Bloom_Inc.cginc" />
     <None Include="Assets\_Effects\PostProcessing\Editor Resources\UI\CurveBackground.shader" />
+    <None Include="Assets\_3dModels\Standard Assets\Effects\TessellationShaders\Shaders\BumpedSpecularSmooth.shader" />
+    <None Include="Assets\_3dModels\Standard Assets\Effects\Projectors\Guidelines.txt" />
     <None Include="Assets\_Effects\PostProcessing\Resources\Shaders\ScreenSpaceReflection.shader" />
     <None Include="Assets\KriptoFX\Realistic Effects Pack v4\Effects\Shaders\DemoMobileDiffuse.shader" />
     <None Include="Assets\_Effects\PostProcessing\Utilities\CustomMotionTexture\Shaders\CustomMotionVectorTexture.shader" />
@@ -307,6 +333,7 @@
     <None Include="Assets\_Effects\PostProcessing\Resources\Shaders\UberSecondPass.cginc" />
     <None Include="Assets\_UI\_DamagePopup\TextMesh Pro\Resources\Shaders\TMPro_Properties.cginc" />
     <None Include="Assets\_Effects\PostProcessing\Resources\Shaders\Tonemapping.cginc" />
+    <None Include="Assets\_3dModels\Standard Assets\Effects\ImageEffects\Readme.txt" />
     <None Include="Assets\_UI\Arrow Mobile UI for UGUI\Changelog.txt" />
     <None Include="Assets\_Effects\PostProcessing\Editor Resources\Monitors\HistogramCompute.compute" />
     <None Include="Assets\_Effects\PostProcessing\Resources\Shaders\Uber.shader" />
@@ -322,6 +349,7 @@
     <None Include="Assets\_Effects\PostProcessing\Resources\Shaders\AmbientOcclusion.shader" />
     <None Include="Assets\_UI\FONTS\chlorinar\1001fonts-chlorinar-eula.txt" />
     <None Include="Assets\KriptoFX\Realistic Effects Pack v4\Effects\Shaders\Portal\RFX4_PortalMask.shader" />
+    <None Include="Assets\_3dModels\Standard Assets\Effects\ToonShading\Shaders\ToonBasicOutline.shader" />
     <None Include="Assets\_Effects\PostProcessing\Resources\Bluenoise64\LICENSE.txt" />
     <None Include="Assets\_Effects\PostProcessing\Resources\Shaders\BuiltinDebugViews.shader" />
     <None Include="Assets\_3dModels\Standard Assets\Environment\Water\DO_NOT_WORK_IN_VR.txt" />
@@ -339,6 +367,9 @@
     <None Include="Assets\_UI\_DamagePopup\TextMesh Pro\Sprites\EmojiOne Attribution.txt" />
     <None Include="Assets\_3dModels\Props\Mega Fantasy Props Pack\README.txt" />
     <None Include="Assets\_UI\_DamagePopup\TextMesh Pro\Resources\Shaders\TMP_SDF-Mobile Masking.shader" />
+    <None Include="Assets\_3dModels\Standard Assets\CrossPlatformInput\CrossPlatformInputGuidelines.txt" />
+    <None Include="Assets\_3dModels\Standard Assets\Effects\ToonShading\Shaders\ToonLitOutline.shader" />
+    <None Include="Assets\_3dModels\Standard Assets\Effects\ToonShading\Shaders\ToonLit.shader" />
     <None Include="Assets\_3dModels\Props\3DForge\FantasyExteriors\Village &amp; Towns\Documents\Blacksmith v1.0 - user guide.txt" />
     <None Include="Assets\_Effects\PostProcessing\Resources\Shaders\Bloom.cginc" />
     <None Include="Assets\_Effects\PostProcessing\Resources\Shaders\TAA.shader" />
@@ -348,6 +379,7 @@
     <None Include="Assets\_Effects\PostProcessing\Resources\Shaders\TAA.cginc" />
     <None Include="Assets\_UI\_DamagePopup\TextMesh Pro\Resources\Shaders\TMP_Bitmap-Mobile.shader" />
     <None Include="Assets\_UI\FONTS\freaks-of-nature\pizzadudedotdk.txt" />
+    <None Include="Assets\_3dModels\Standard Assets\Effects\Projectors\Shaders\ProjectorLight.shader" />
     <None Include="Assets\_Effects\PostProcessing\Resources\Shaders\EyeAdaptation.cginc" />
     <None Include="Assets\_3dModels\Standard Assets\Environment\Water\Water\Shaders\FXWaterPro.shader" />
     <None Include="Assets\_Effects\PostProcessing\Resources\Shaders\GrainGen.shader" />
@@ -359,10 +391,13 @@
     <None Include="Assets\_UI\_DamagePopup\TextMesh Pro\Resources\Shaders\TMPro_Surface.cginc" />
     <None Include="Assets\_UI\_DamagePopup\TextMesh Pro\Resources\Shaders\TMP_SDF-Mobile Overlay.shader" />
     <None Include="Assets\_Effects\PostProcessing\Resources\Shaders\Bloom.shader" />
+    <None Include="Assets\_3dModels\Standard Assets\Effects\Projectors\Shaders\ProjectorMultiply.shader" />
+    <None Include="Assets\_3dModels\Standard Assets\Characters\ThirdPersonCharacter\ThirdPersonCharacterGuidelines.txt" />
     <None Include="Assets\_Scenes\Textures\grass1-unity\About these PBR files.txt" />
     <None Include="Assets\_UI\FONTS\rubber-biscuit\express.txt" />
     <None Include="Assets\_3dModels\Props\Rocks and Boulders 2\Shaders\Blend SM3.shader" />
     <None Include="Assets\KriptoFX\Realistic Effects Pack v4\Effects\Shaders\Portal\NoStencilTransperentDiffuse.shader" />
+    <None Include="Assets\_3dModels\Standard Assets\Cameras\CameraGuidelines.txt" />
     <None Include="Assets\_UI\_DamagePopup\TextMesh Pro\Resources\Shaders\TMP_Bitmap.shader" />
     <None Include="Assets\_UI\_DamagePopup\TextMesh Pro\Resources\Shaders\TMPro.cginc" />
     <None Include="Assets\KriptoFX\Realistic Effects Pack v4\Effects\Shaders\Portal\RFX4_PortalRock.shader" />
@@ -378,6 +413,7 @@
     <None Include="Assets\_3dModels\Standard Assets\Environment\Water\Water4\Shaders\FXWater4Advanced.shader" />
     <None Include="Assets\_Scenes\Textures\branches_twisted_Normal-unity\About these PBR files.txt" />
     <None Include="Assets\_UI\_DamagePopup\TextMesh Pro\Resources\Shaders\TMP_SDF-Mobile.shader" />
+    <None Include="Assets\_3dModels\Standard Assets\Effects\TessellationShaders\Shaders\BumpedSpecularDisplacement.shader" />
     <None Include="Assets\_Effects\PostProcessing\Resources\Shaders\AmbientOcclusion.cginc" />
     <None Include="Assets\_3dModels\Props\Rocks and Boulders 2\Shaders\Blend SM2.shader" />
     <None Include="Assets\_UI\_DamagePopup\TextMesh Pro\Resources\Shaders\TMP_Sprite.shader" />
