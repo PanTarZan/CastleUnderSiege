@@ -86,6 +86,7 @@ public class CUS_Enemy_AI : MonoBehaviour
 
     private void UpdateHealth()
     {
+        if(healthBarPrefab)
         healthBarPrefab.DisplayHealth(Mathf.Clamp01(current_health / starting_health));
         if (current_health <= 0)
         {

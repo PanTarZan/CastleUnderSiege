@@ -70,8 +70,11 @@ public class CUS_Wave_System : MonoBehaviour
         if (startedSpawningWaves)
         {
             var currentEnemies = FindObjectsOfType<CUS_Enemy_AI>();
+            if (enemy_display)
             enemy_display.GetComponent<Text>().text = currentEnemies.Length.ToString();
+            if (wave_display)
             wave_display.GetComponent<Text>().text = waveIndex.ToString() + " / " + waves.Capacity.ToString();
+            if (wave_timer)
             wave_timer.fillAmount = (nextWaveTime - Time.time) / timeBetweenWaves;
 
             if (nextWaveTime < Time.time)

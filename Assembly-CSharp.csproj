@@ -61,7 +61,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\_3dModels\Props\Rocks and Boulders 2\Shaders\RotateGameObject.cs" />
-    <Compile Include="Assets\_3dModels\Props\Tower Defence\Shooting.cs" />
     <Compile Include="Assets\_3dModels\Standard Assets\Cameras\Scripts\AbstractTargetFollower.cs" />
     <Compile Include="Assets\_3dModels\Standard Assets\Cameras\Scripts\AutoCam.cs" />
     <Compile Include="Assets\_3dModels\Standard Assets\Cameras\Scripts\FreeLookCam.cs" />
@@ -142,12 +141,14 @@
     <Compile Include="Assets\_Prefabs\_Enemies\HEROIC FANTASY CREATURES FULL PACK\DEMONIC CREATURES PACK\DEMON LORD\SCRIPT\ScrollingUVs.cs" />
     <Compile Include="Assets\_Prefabs\_MousePointer\Pointer.cs" />
     <Compile Include="Assets\_Prefabs\_Projectiles\Cannon_Ball\Projectile.cs" />
+    <Compile Include="Assets\_Prefabs\AutoShootingAI.cs" />
     <Compile Include="Assets\_Prefabs\Explosions\RFX4_AudioCurves.cs" />
     <Compile Include="Assets\_Prefabs\Explosions\RFX4_CameraShake.cs" />
     <Compile Include="Assets\_Prefabs\Explosions\RFX4_Decal.cs" />
     <Compile Include="Assets\_Prefabs\Explosions\RFX4_EffectSettings.cs" />
     <Compile Include="Assets\_Prefabs\Explosions\RFX4_LightCurves.cs" />
     <Compile Include="Assets\_Prefabs\Explosions\RFX4_ShaderFloatCurve.cs" />
+    <Compile Include="Assets\_Prefabs\Shooting.cs" />
     <Compile Include="Assets\_Scripts\Account.cs" />
     <Compile Include="Assets\_Scripts\AccountData.cs" />
     <Compile Include="Assets\_Scripts\AudioManager.cs" />
@@ -304,6 +305,8 @@
     <Compile Include="Assets\KriptoFX\Realistic Effects Pack v4\SceneResources\Other\RFX4_FPS.cs" />
     <Compile Include="Assets\KriptoFX\Realistic Effects Pack v4\SceneResources\Other\RFX4_MouseOrbit.cs" />
     <Compile Include="Assets\KriptoFX\Realistic Effects Pack v4\SceneResources\Other\RFX4_RealtimeReflection.cs" />
+    <Compile Include="Assets\MenuEnemyDestroyer.cs" />
+    <Compile Include="Assets\Pixelate\Pixelate.cs" />
     <Compile Include="Assets\RFX4_ColisDetect.cs" />
     <None Include="Assets\_Effects\PostProcessing\Resources\Shaders\DepthOfField.shader" />
     <None Include="Assets\_3dModels\Standard Assets\Effects\GlassRefraction\Shaders\GlassStainedBumpDistort.shader" />
@@ -345,7 +348,6 @@
     <None Include="Assets\_Effects\PostProcessing\Editor Resources\Monitors\VectorscopeCompute.compute" />
     <None Include="Assets\_Effects\PostProcessing\Resources\Shaders\FXAA3.cginc" />
     <None Include="Assets\_Effects\PostProcessing\Resources\Shaders\MotionBlur.shader" />
-    <None Include="Assets\_3dModels\Props\3DForge\Blueprints\PremiumBlueprints\PB_VIK_VEK\ThunderHammerForge\Documents\Premium BLUEPRINTS Thunder Hammer Forge INFO.txt" />
     <None Include="Assets\_Effects\PostProcessing\Resources\Shaders\AmbientOcclusion.shader" />
     <None Include="Assets\_UI\FONTS\chlorinar\1001fonts-chlorinar-eula.txt" />
     <None Include="Assets\KriptoFX\Realistic Effects Pack v4\Effects\Shaders\Portal\RFX4_PortalMask.shader" />
@@ -370,7 +372,6 @@
     <None Include="Assets\_3dModels\Standard Assets\CrossPlatformInput\CrossPlatformInputGuidelines.txt" />
     <None Include="Assets\_3dModels\Standard Assets\Effects\ToonShading\Shaders\ToonLitOutline.shader" />
     <None Include="Assets\_3dModels\Standard Assets\Effects\ToonShading\Shaders\ToonLit.shader" />
-    <None Include="Assets\_3dModels\Props\3DForge\FantasyExteriors\Village &amp; Towns\Documents\Blacksmith v1.0 - user guide.txt" />
     <None Include="Assets\_Effects\PostProcessing\Resources\Shaders\Bloom.cginc" />
     <None Include="Assets\_Effects\PostProcessing\Resources\Shaders\TAA.shader" />
     <None Include="Assets\_Effects\PostProcessing\Resources\Shaders\EyeHistogram.compute" />
@@ -416,6 +417,7 @@
     <None Include="Assets\_3dModels\Standard Assets\Effects\TessellationShaders\Shaders\BumpedSpecularDisplacement.shader" />
     <None Include="Assets\_Effects\PostProcessing\Resources\Shaders\AmbientOcclusion.cginc" />
     <None Include="Assets\_3dModels\Props\Rocks and Boulders 2\Shaders\Blend SM2.shader" />
+    <None Include="Assets\Pixelate\Pixelate.shader" />
     <None Include="Assets\_UI\_DamagePopup\TextMesh Pro\Resources\Shaders\TMP_Sprite.shader" />
     <None Include="Assets\_Effects\PostProcessing\Editor Resources\Monitors\WaveformCompute.compute" />
     <None Include="Assets\_UI\_DamagePopup\TextMesh Pro\Resources\Shaders\TMP_SDF-Surface.shader" />
