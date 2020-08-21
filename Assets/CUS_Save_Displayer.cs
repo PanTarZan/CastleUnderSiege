@@ -12,12 +12,8 @@ public class CUS_Save_Displayer : MonoBehaviour
     public List<string> saveFilesPath = new List<string>();
     public CUS_UI_Screen levelSelectScreen;
     public InputField newAccountName;
-    // Start is called before the first frame update
-    void Start()
-    {
-        GetSaveFileNames();
-        PopulateSaveFiles();
-    }
+
+    public Button LoadSavesButton;
 
 
 
@@ -28,7 +24,7 @@ public class CUS_Save_Displayer : MonoBehaviour
 
     }
 
-    private void PopulateSaveFiles()
+    public void PopulateSaveFiles()
     {
         for (int i = 0; i <= saveFilesPath.Count-1; i++)
         {
@@ -38,12 +34,16 @@ public class CUS_Save_Displayer : MonoBehaviour
         }
     }
 
-    private void GetSaveFileNames()
+    public void GetSaveFileNames()
     {
-        Debug.Log("populating saves: " + Time.time);
+        saveFilesPath.Clear();
         string path = Application.persistentDataPath;
         var files = Directory.GetFiles(path);
 
+        if (files.Length == 0)
+        {
+            LoadSavesButton.interactable = false;
+        }
         foreach (var file in files)
         {
             if (file.EndsWith(".kappa"))
@@ -55,10 +55,7 @@ public class CUS_Save_Displayer : MonoBehaviour
 
     public void DisplaySaveInfo()
     {
-        foreach (Transform child in contentHandler)
-        {
-            Destroy(child.gameObject);
-        }
+        PopulateSaveFiles();
         foreach (Transform child in transform)
         {
             Account acc = child.GetComponent<Account>();
@@ -87,6 +84,18 @@ public class CUS_Save_Displayer : MonoBehaviour
             kills.transform.SetParent(button.transform);
             var kills_txt = kills.GetComponent<Text>();
             kills_txt.text = "kills: " + acc.enemiesKilled.ToString();
+        }
+    }
+
+    public void ClearSavesInfo()
+    {
+        foreach (Transform child in contentHandler)
+        {
+            Destroy(child.gameObject);
+        }
+        foreach (Transform child in transform)
+        {
+            Destroy(child.gameObject);
         }
     }
 

@@ -7,11 +7,11 @@ using UnityEngine.UI;
 public class HeadQuaters : MonoBehaviour
 {
     [SerializeField] float max_health =100;
-    [SerializeField] float money;
+    [SerializeField] int money;
     [SerializeField] public GameObject centerOfBase = null;
     [SerializeField] float checkIfEnemyRadius=1;
     public float currentHealth;
-    public float currentMoney;
+    public int currentMoney;
 
 
     [SerializeField] GameObject health_display_bar = null;
@@ -22,6 +22,19 @@ public class HeadQuaters : MonoBehaviour
     void Start()
     {
         currentHealth = max_health;
+        LoadSomeStatsFromAccountData();
+        currentMoney = money;
+    }
+
+    public void LoadSomeStatsFromAccountData()
+    {
+        if (FindObjectOfType<CurrentPlayerAccount>())
+        {
+            var _acc = FindObjectOfType<CurrentPlayerAccount>();
+            money = _acc.gold;
+            Debug.Log("Getting Muni" + _acc.AccountName);
+            Debug.Log("Getting Muni" + _acc.gold);
+        }
     }
 
     // Update is called once per frame

@@ -74,6 +74,7 @@ public class LevelManagement : MonoBehaviour
                 if (acc.levelsUnlocked <= levelUnlockedIndex)
                 {
                     acc.levelsUnlocked = levelUnlockedIndex;
+                    acc.gold = FindObjectOfType<HeadQuaters>().currentMoney;
                     CUS_Save_system.SaveAccountData(acc, Application.persistentDataPath+"/"+acc.AccountName+".kappa");
                 }
             }

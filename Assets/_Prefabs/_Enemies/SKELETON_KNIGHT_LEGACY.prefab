@@ -790,6 +790,7 @@ MonoBehaviour:
   m_MovingTurnSpeed: 360
   m_StationaryTurnSpeed: 180
   stepSound: EnemySteps
+  goldOnDrop: 10
 --- !u!1 &4122027881861776681
 GameObject:
   m_ObjectHideFlags: 0

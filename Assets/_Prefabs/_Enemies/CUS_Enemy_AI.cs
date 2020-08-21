@@ -31,7 +31,9 @@ public class CUS_Enemy_AI : MonoBehaviour
 
     [Header("Audio Part")]
     public string stepSound = "EnemySteps";
-    
+
+    [Header("Gold Part")]
+    public int goldOnDrop = 0;
 
     // Start is called before the first frame update
     void Start()
@@ -102,6 +104,9 @@ public class CUS_Enemy_AI : MonoBehaviour
         agent.speed = 0;
         m_Animator.SetTrigger("Die");
         yield return new WaitForSeconds(dieTime);
+        var _acc = FindObjectOfType<CurrentPlayerAccount>();
+        _acc.enemiesKilled += 1;
+        FindObjectOfType<HeadQuaters>().currentMoney += goldOnDrop;
         Destroy(gameObject);
     }
 
@@ -109,6 +114,7 @@ public class CUS_Enemy_AI : MonoBehaviour
     {
         current_health -= damage;
         m_Animator.SetTrigger("GetHit");
+        if (damagePopupPrefab)
         damagePopupPrefab.GetComponent<DamagePopup>().Create(transform.position, damage, damagePopupPrefab);
     }
 

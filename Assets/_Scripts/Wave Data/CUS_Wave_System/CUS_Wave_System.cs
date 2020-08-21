@@ -83,6 +83,7 @@ public class CUS_Wave_System : MonoBehaviour
                 {
                     if (currentEnemies.Length <= 0)
                     {
+                        if(FindObjectOfType<LevelManagement>())
                         FindObjectOfType<LevelManagement>().ShowVictoryScreen();
                         return;
                     }
