@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.UI;
 
 public class CastingSpells : MonoBehaviour
@@ -12,6 +10,7 @@ public class CastingSpells : MonoBehaviour
     public float manaRate = 0f;
     public float manaSpeed = 0f;
     float nextMana = 0.1f;
+    public UpgradeSystem uSystem;
 
     Pointer pointer;
     public Vector3 SpellSpawnOffset;
@@ -35,10 +34,11 @@ public class CastingSpells : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Mouse1))
         {
-            if (currentSpellCost <= currentMana)
+            if (currentSpellCost*uSystem.spellCostMultiplier <= currentMana)
             {
-                Instantiate(CurrentMagicSpellPrefab, pointer.transform.position+SpellSpawnOffset, Quaternion.Euler(90,0,0));
-                currentMana -= currentSpellCost;
+                var spell = Instantiate(CurrentMagicSpellPrefab, pointer.transform.position+SpellSpawnOffset, Quaternion.Euler(90,0,0));
+                ApplyUpgrades(spell);
+                currentMana -= currentSpellCost*uSystem.spellCostMultiplier;
             }
             else
             {
@@ -46,6 +46,14 @@ public class CastingSpells : MonoBehaviour
             }
         }
         
+    }
+
+    private void ApplyUpgrades(GameObject spell)
+    {
+        var s_projectile = spell.GetComponent<Projectile>();
+        s_projectile.damageMIN = s_projectile.damageMIN * uSystem.spellDamageMultiplier;
+        s_projectile.damageMAX = s_projectile.damageMAX * uSystem.spellDamageMultiplier;
+        s_projectile.explosionRadius = s_projectile.explosionRadius * uSystem.radiusMultiplier;
     }
 
     private void GenerateMana()

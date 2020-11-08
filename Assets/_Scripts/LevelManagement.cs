@@ -15,6 +15,7 @@ public class LevelManagement : MonoBehaviour
     public CUS_UI_Screen VictoryScreen;
     public CUS_UI_Screen GameOverScreen;
     public CUS_UI_Screen PausedScreen;
+    public CUS_UI_Screen upgradeScreen;
     public CUS_UI_Screen gameUI;
     public UnityEvent onVictory;
     public UnityEvent onGameOver;
@@ -36,10 +37,18 @@ public class LevelManagement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Escape))
+        if (!isGamePaused)
         {
-            if (!isGamePaused)
+            if (Input.GetKeyDown(KeyCode.Escape))
+            {
+                isGamePaused = true;
                 PauseGame();
+            }
+            if (Input.GetKeyDown(KeyCode.Space))
+            {
+                isGamePaused = true;
+                UpgradeScreen();
+            }
         }
 
         ManageCursorState();
@@ -94,9 +103,16 @@ public class LevelManagement : MonoBehaviour
 
     public void PauseGame()
     {
-        isGamePaused = true;
+        //isGamePaused = true;
         Time.timeScale = 0;
         FindObjectOfType<CUS_UI_System>().SwitchScreens(PausedScreen);
+    }
+    public void UpgradeScreen()
+    {
+        Debug.Log("upgrades");
+        //isGamePaused = true;
+        Time.timeScale = 0;
+        FindObjectOfType<CUS_UI_System>().SwitchScreens(upgradeScreen);
     }
 
     public void ResumeGame()

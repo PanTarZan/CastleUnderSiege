@@ -3,19 +3,14 @@
 public class Projectile : MonoBehaviour
 {
     public string explosionSound;
-    [SerializeField] float thrust=1;
-    [SerializeField] float damageMIN=1;
-    [SerializeField] float damageMAX = 2 ;
-    [SerializeField] float explosionRadius =1;
+    [SerializeField] public float damageMIN=1;
+    [SerializeField] public float damageMAX = 2 ;
+    [SerializeField] public float explosionRadius =1;
     public GameObject explosionEffect;
-    Rigidbody rb;
     public bool destroyOnImpact = true;
 
     void Start()
     {
-        rb = GetComponent<Rigidbody>();
-        if (rb)
-            rb.AddForce(transform.forward * thrust);
     }
 
     void OnCollisionEnter(Collision col)

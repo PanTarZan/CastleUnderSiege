@@ -8,27 +8,26 @@ using UnityEngine.UI;
 [RequireComponent(typeof(LineRenderer))]
 public class Shooting : MonoBehaviour
 {
-
+    [Header("Others")]
     [SerializeField] Image shootColdown = null;
     public string shootSound;
-
     public UnityEvent OnCannonShoot;
-    public GameObject projectilePrefab;
-    public GameObject cannonStartPoint;
-    public float shootCooldown;
-    public float nextFire = 0.1f;
-    public GameObject CannonHead;
-    public GameObject CannonBase;
-
     public LayerMask layer;
     public LineRenderer lineVisual;
     public int lineSegment = 10;
-    float resetTimer;
+    public GameObject projectilePrefab;
+    public GameObject cannonStartPoint;
+    public float nextFire = 0.1f;
+    public GameObject CannonHead;
+    public GameObject CannonBase;
     GameObject pointer;
-
-
     private Quaternion m_CharacterTargetRot;
     private Quaternion m_CameraTargetRot;
+    public UpgradeSystem uSystem;
+
+    [Header("Attributes")]
+    public float shootCooldown;
+    
 
     // Start is called before the first frame update
     void Start()
@@ -48,11 +47,11 @@ public class Shooting : MonoBehaviour
         Visualize(vo);
 
         if (shootColdown)
-            shootColdown.fillAmount = 1 - ((nextFire - Time.time) / shootCooldown);
+            shootColdown.fillAmount = 1 - ((nextFire - Time.time) / (shootCooldown * uSystem.shootingCooldownMultiplier));
 
         if (Input.GetKey(KeyCode.Mouse0) && (nextFire <= Time.time))
         {
-            nextFire = Time.time + shootCooldown;
+            nextFire = Time.time + (shootCooldown * uSystem.shootingCooldownMultiplier);
             Shoot(vo);
         }
     }
@@ -61,7 +60,16 @@ public class Shooting : MonoBehaviour
     {
         var ball = Instantiate(projectilePrefab, cannonStartPoint.transform.position, cannonStartPoint.transform.rotation);
         ball.GetComponent<Rigidbody>().velocity = vo;
+        ApplyUpgrades(ball);
         OnCannonShoot.Invoke();
+    }
+
+    private void ApplyUpgrades(GameObject ball)
+    {
+        var b_projectile = ball.GetComponent<Projectile>();
+        b_projectile.damageMIN = b_projectile.damageMIN * uSystem.damageMultiplier;
+        b_projectile.damageMAX = b_projectile.damageMAX * uSystem.damageMultiplier;
+        b_projectile.explosionRadius = b_projectile.explosionRadius * uSystem.radiusMultiplier;
     }
 
     public void LookRotation(GameObject pointer, Vector3 vo)

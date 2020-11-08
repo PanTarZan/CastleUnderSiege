@@ -308,6 +308,7 @@
     <Compile Include="Assets\MenuEnemyDestroyer.cs" />
     <Compile Include="Assets\Pixelate\Pixelate.cs" />
     <Compile Include="Assets\RFX4_ColisDetect.cs" />
+    <Compile Include="Assets\UpgradeSystem.cs" />
     <None Include="Assets\_Effects\PostProcessing\Resources\Shaders\DepthOfField.shader" />
     <None Include="Assets\_3dModels\Standard Assets\Effects\GlassRefraction\Shaders\GlassStainedBumpDistort.shader" />
     <None Include="Assets\_3dModels\Standard Assets\Effects\ToonShading\Shaders\ToonBasic.shader" />

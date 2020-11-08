@@ -105,6 +105,7 @@ public class CUS_Enemy_AI : MonoBehaviour
         m_Animator.SetTrigger("Die");
         yield return new WaitForSeconds(dieTime);
         var _acc = FindObjectOfType<CurrentPlayerAccount>();
+        if (_acc)
         _acc.enemiesKilled += 1;
         FindObjectOfType<HeadQuaters>().currentMoney += goldOnDrop;
         Destroy(gameObject);
