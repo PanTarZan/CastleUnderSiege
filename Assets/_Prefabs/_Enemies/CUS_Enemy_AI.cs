@@ -34,10 +34,15 @@ public class CUS_Enemy_AI : MonoBehaviour
 
     [Header("Gold Part")]
     public int goldOnDrop = 0;
+    private HeadQuaters HQ;
 
     // Start is called before the first frame update
     void Start()
     {
+        //HQ
+        HQ = FindObjectOfType<HeadQuaters>();
+
+        //Anima
         m_Animator = GetComponent<Animator>();
         current_health = starting_health;
         
@@ -107,12 +112,13 @@ public class CUS_Enemy_AI : MonoBehaviour
         var _acc = FindObjectOfType<CurrentPlayerAccount>();
         if (_acc)
         _acc.enemiesKilled += 1;
-        FindObjectOfType<HeadQuaters>().currentMoney += goldOnDrop;
+        HQ.currentMoney += goldOnDrop;
         Destroy(gameObject);
     }
 
     public void TakeDamage(float damage)
     {
+        Debug.Log("took " + damage + "damage");
         current_health -= damage;
         m_Animator.SetTrigger("GetHit");
         if (damagePopupPrefab)

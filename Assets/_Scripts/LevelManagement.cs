@@ -24,11 +24,12 @@ public class LevelManagement : MonoBehaviour
 
     public bool isGamePaused = false;
     public bool hasGameEnded = false;
+    private HeadQuaters HQ;
 
     // Start is called before the first frame update
     void Start()
     {
-        //HQ = gameObject.GetComponent<HeadQuaters>();
+        HQ = gameObject.GetComponent<HeadQuaters>();
         //CameraRaycaster = FindObjectOfType<CameraRaycaster>();
         //DM = gameObject.GetComponent<DialogManager>();
     }
@@ -83,7 +84,7 @@ public class LevelManagement : MonoBehaviour
                 if (acc.levelsUnlocked <= levelUnlockedIndex)
                 {
                     acc.levelsUnlocked = levelUnlockedIndex;
-                    acc.gold = FindObjectOfType<HeadQuaters>().currentMoney;
+                    acc.gold = HQ.currentMoney;
                     CUS_Save_system.SaveAccountData(acc, Application.persistentDataPath+"/"+acc.AccountName+".kappa");
                 }
             }
@@ -109,7 +110,6 @@ public class LevelManagement : MonoBehaviour
     }
     public void UpgradeScreen()
     {
-        Debug.Log("upgrades");
         //isGamePaused = true;
         Time.timeScale = 0;
         FindObjectOfType<CUS_UI_System>().SwitchScreens(upgradeScreen);

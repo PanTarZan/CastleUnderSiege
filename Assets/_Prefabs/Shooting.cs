@@ -40,7 +40,6 @@ public class Shooting : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
         Vector3 vo = CalculateVelocty(pointer.transform.position, cannonStartPoint.transform.position, 1f);
 
         LookRotation(pointer,vo);
@@ -67,6 +66,7 @@ public class Shooting : MonoBehaviour
     private void ApplyUpgrades(GameObject ball)
     {
         var b_projectile = ball.GetComponent<Projectile>();
+        b_projectile.uSystem = uSystem;
         b_projectile.damageMIN = b_projectile.damageMIN * uSystem.damageMultiplier;
         b_projectile.damageMAX = b_projectile.damageMAX * uSystem.damageMultiplier;
         b_projectile.explosionRadius = b_projectile.explosionRadius * uSystem.radiusMultiplier;

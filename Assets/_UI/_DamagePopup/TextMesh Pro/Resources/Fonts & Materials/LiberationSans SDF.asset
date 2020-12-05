@@ -9,7 +9,7 @@ Material:
   m_PrefabAsset: {fileID: 0}
   m_Name: LiberationSans SDF Material
   m_Shader: {fileID: 4800000, guid: dd89cf5b9246416f84610a006f916af7, type: 3}
-  m_ShaderKeywords: OUTLINE_ON _EMISSION
+  m_ShaderKeywords: GLOW_ON OUTLINE_ON _EMISSION
   m_LightmapFlags: 1
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
@@ -68,7 +68,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Floats:
-    - _Ambient: 1
+    - _Ambient: 0.921
     - _Bevel: 0
     - _BevelClamp: 0
     - _BevelOffset: 0
@@ -82,38 +82,38 @@ Material:
     - _DetailNormalMapScale: 1
     - _Diffuse: 0
     - _DstBlend: 0
-    - _FaceDilate: 0.25
+    - _FaceDilate: 0
     - _FaceShininess: 0
     - _FaceUVSpeedX: 0
     - _FaceUVSpeedY: 0
     - _GlossMapScale: 1
     - _Glossiness: 0.5
     - _GlossyReflections: 1
-    - _GlowInner: 0.05
-    - _GlowOffset: 0
-    - _GlowOuter: 0.05
-    - _GlowPower: 0.75
+    - _GlowInner: 0.323
+    - _GlowOffset: 1
+    - _GlowOuter: 1
+    - _GlowPower: 0.105
     - _GradientScale: 10
-    - _LightAngle: 3.9
+    - _LightAngle: 0
     - _MaskSoftnessX: 0
     - _MaskSoftnessY: 0
     - _Metallic: 0.384
     - _Mode: 0
     - _OcclusionStrength: 1
     - _OutlineShininess: 0
-    - _OutlineSoftness: 0
+    - _OutlineSoftness: 0.262
     - _OutlineUVSpeedX: 0
     - _OutlineUVSpeedY: 0
-    - _OutlineWidth: 0.353
+    - _OutlineWidth: 0.2
     - _Parallax: 0.02
     - _PerspectiveFilter: 1
     - _Reflectivity: 7.16
     - _ScaleRatioA: 0.9
-    - _ScaleRatioB: 0.50625
-    - _ScaleRatioC: 0.50625
+    - _ScaleRatioB: 0.365625
+    - _ScaleRatioC: 0.73125
     - _ScaleX: 1
     - _ScaleY: 1
-    - _ShaderFlags: 0
+    - _ShaderFlags: 1
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
     - _SpecularPower: 4
@@ -141,9 +141,9 @@ Material:
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _EnvMatrixRotation: {r: 0, g: 0, b: 0, a: 0}
     - _FaceColor: {r: 1, g: 1, b: 1, a: 1}
-    - _GlowColor: {r: 0, g: 1, b: 0, a: 0.5}
+    - _GlowColor: {r: 0.7735849, g: 0.4053464, b: 0.105820596, a: 0.5}
     - _MaskCoord: {r: 0, g: 0, b: 32767, a: 32767}
-    - _OutlineColor: {r: 0.735849, g: 0.36090285, b: 0, a: 1}
+    - _OutlineColor: {r: 0, g: 0, b: 0, a: 1}
     - _ReflectFaceColor: {r: 0, g: 0, b: 0, a: 1}
     - _ReflectOutlineColor: {r: 0, g: 0, b: 0, a: 1}
     - _SpecColor: {r: 0, g: 0, b: 0, a: 1}

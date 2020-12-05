@@ -8,9 +8,11 @@ public class Projectile : MonoBehaviour
     [SerializeField] public float explosionRadius =1;
     public GameObject explosionEffect;
     public bool destroyOnImpact = true;
+    public UpgradeSystem uSystem;
 
     void Start()
     {
+        
     }
 
     void OnCollisionEnter(Collision col)
@@ -35,12 +37,15 @@ public class Projectile : MonoBehaviour
 
     private void DamageAllObjects(Collider[] hit)
     {
+        //uSystem = FindObjectOfType<UpgradeSystem>();
         foreach (var h in hit)
         {
             if (h.transform.GetComponent<CUS_Enemy_AI>())
             {
+                Debug.Log(uSystem.damageMultiplier);
                 float damage = Random.Range(damageMIN, damageMAX);
-                h.transform.GetComponent<CUS_Enemy_AI>().TakeDamage(damage);
+                Debug.Log(uSystem.damageMultiplier);
+                h.transform.GetComponent<CUS_Enemy_AI>().TakeDamage(damage*uSystem.damageMultiplier);
             }
         }
     }
