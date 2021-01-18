@@ -261,6 +261,7 @@
     <Compile Include="Assets\_UI\Arrow Mobile UI for UGUI\Scripts\UI\UIWindow.cs" />
     <Compile Include="Assets\_UI\Arrow Mobile UI for UGUI\Scripts\UI\UIWindowManager.cs" />
     <Compile Include="Assets\CUS_Save_Displayer.cs" />
+    <Compile Include="Assets\CUS_SettingSystem.cs" />
     <Compile Include="Assets\Fantasy Forest Environment\Scripts\TexturePan.cs" />
     <Compile Include="Assets\KriptoFX\Realistic Effects Pack v4\Effects\Scripts\Curves\RFX4_PhysicsForceCurves.cs" />
     <Compile Include="Assets\KriptoFX\Realistic Effects Pack v4\Effects\Scripts\Curves\RFX4_ScaleCurves.cs" />

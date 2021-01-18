@@ -72,8 +72,10 @@ public class CUS_LevelSelect : MonoBehaviour
 
     public void SetCameraLocationOnPoint()
     {
-        m_camera.transform.position = Vector3.Lerp(m_camera.transform.position, CurrentScreenPosition().position, Time.deltaTime);
-        m_camera.transform.rotation = Quaternion.Lerp(m_camera.transform.rotation, CurrentScreenPosition().rotation, Time.deltaTime);
+        //m_camera.transform.position = Vector3.Lerp(m_camera.transform.position, CurrentScreenPosition().position, Time.deltaTime);
+        m_camera.transform.position = CurrentScreenPosition().position;
+        //m_camera.transform.rotation = Quaternion.Lerp(m_camera.transform.rotation, CurrentScreenPosition().rotation, Time.deltaTime);
+        m_camera.transform.rotation = CurrentScreenPosition().rotation;
     }
 
     private Transform CurrentScreenPosition()

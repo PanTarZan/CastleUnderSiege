@@ -902,6 +902,12 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 1625440452942714715, guid: 1d56c16cbccc0a544bdfa2798bf0a103,
+        type: 3}
+      propertyPath: profile
+      value: 
+      objectReference: {fileID: 11400000, guid: d459203da0d5683429fad3636876e707,
+        type: 2}
     - target: {fileID: 1625440453233835456, guid: 1d56c16cbccc0a544bdfa2798bf0a103,
         type: 3}
       propertyPath: uSystem

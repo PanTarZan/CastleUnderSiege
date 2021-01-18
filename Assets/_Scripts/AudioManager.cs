@@ -1,5 +1,6 @@
 ﻿
 using UnityEngine;
+using UnityEngine.Audio;
 
 [System.Serializable]
 public class Sound{
@@ -32,6 +33,7 @@ public class Sound{
         source.volume = volume * (1 + Random.Range(-volumeRandom * 0.5f, volumeRandom * 0.5f));
         source.pitch = pitch * (1 + Random.Range(-pitchRandom * 0.5f, pitchRandom * 0.5f));
         source.loop = loop;
+
         if (oneShot)
         {
             source.PlayOneShot(source.clip);
