@@ -118,7 +118,7 @@ public class LevelManagement : MonoBehaviour
     public void ResumeGame()
     {
         Time.timeScale = 1;
-        FindObjectOfType<CUS_UI_System>().GoToPreviousScreen();
+        FindObjectOfType<CUS_UI_System>().SwitchScreens(gameUI);
         isGamePaused = false;
     }
 

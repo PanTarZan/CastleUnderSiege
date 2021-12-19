@@ -27,7 +27,7 @@ public class Projectile : MonoBehaviour
         AudioManager _am = AudioManager.instance;
         if (explosionSound != string.Empty)
         {
-            _am.PlaySound(explosionSound);
+            //_am.PlaySound(explosionSound);
         }
         Collider[] hit = Physics.OverlapSphere(transform.position, explosionRadius);
         DamageAllObjects(hit);

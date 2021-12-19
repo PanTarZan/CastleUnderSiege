@@ -3702,8 +3702,8 @@ GameObject:
   - component: {fileID: 426660093}
   - component: {fileID: 426660092}
   m_Layer: 0
-  m_Name: SettingsManager
-  m_TagString: Untagged
+  m_Name: SettingsManager_MM
+  m_TagString: SettingSystem
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

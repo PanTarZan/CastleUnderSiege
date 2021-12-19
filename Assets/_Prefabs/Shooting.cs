@@ -46,11 +46,11 @@ public class Shooting : MonoBehaviour
         Visualize(vo);
 
         if (shootColdown)
-            shootColdown.fillAmount = 1 - ((nextFire - Time.time) / (shootCooldown * uSystem.shootingCooldownMultiplier));
+            shootColdown.fillAmount = 1 - ((nextFire - Time.time) / (shootCooldown)); // * uSystem.shootingCooldownMultiplier));
 
         if (Input.GetKey(KeyCode.Mouse0) && (nextFire <= Time.time))
         {
-            nextFire = Time.time + (shootCooldown * uSystem.shootingCooldownMultiplier);
+            nextFire = Time.time + (shootCooldown); //* uSystem.shootingCooldownMultiplier);
             Shoot(vo);
         }
     }
@@ -59,7 +59,7 @@ public class Shooting : MonoBehaviour
     {
         var ball = Instantiate(projectilePrefab, cannonStartPoint.transform.position, cannonStartPoint.transform.rotation);
         ball.GetComponent<Rigidbody>().velocity = vo;
-        ApplyUpgrades(ball);
+        //ApplyUpgrades(ball);
         OnCannonShoot.Invoke();
     }
 

@@ -32,8 +32,8 @@ public class HeadQuaters : MonoBehaviour
         {
             var _acc = FindObjectOfType<CurrentPlayerAccount>();
             money = _acc.gold;
-            Debug.Log("Getting Muni" + _acc.AccountName);
-            Debug.Log("Getting Muni" + _acc.gold);
+            Debug.Log("Getting Muni from Account: " + _acc.AccountName);
+            Debug.Log("Getting Muni ammount: " + _acc.gold);
         }
     }
 

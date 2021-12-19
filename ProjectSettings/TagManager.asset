@@ -8,6 +8,7 @@ TagManager:
   - Terrain
   - Turret
   - SaveSystem
+  - SettingSystem
   layers:
   - Default
   - TransparentFX
